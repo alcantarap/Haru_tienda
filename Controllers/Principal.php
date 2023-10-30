@@ -27,16 +27,28 @@ class Principal extends Controller
         $data['title'] = '----------';
         $this->views->getView('principal', "detail", $data);
     }
-    //Vista detail
+    //Vista adoptame
     public function adoptame()
     {
         $data['title'] = 'adoptame';
         $this->views->getView('principal', "adoptame", $data);
     }
-    //Vista detail
+    //Vista cuidame
     public function cuidame()
     {
         $data['title'] = 'cuidado y bienestar';
         $this->views->getView('principal', "cuidame", $data);
+    }
+    //Vista preguntas
+    public function preguntas()
+    {
+        $data['title'] = 'preguntas frecuentes';
+        $this->views->getView('principal', "preguntas", $data);
+    }
+    //Vista publicaciones de adopción
+    public function publicaciones_adop()
+    {
+        $data['title'] = 'adopción';
+        $this->views->getView('principal', "publicaciones_adop", $data);
     }
 }
