@@ -18,24 +18,23 @@
     </div>
 
 
-
-    <section class="bg-success py-5">
-        <div class="container">
-            <div class="row align-items-center py-5">
-                <div class="col-md-8 text-white">
-                    <h1>¿Qué es "Haru Store?</h1>
-                    <br>
-                    <p>
-                        Haru Store es un E-commerce dedicado a la venta de productos petcare y accesorios para todas nuestras mascotas. <br> Ofrecemos un amplio catalogo de productos para una mejor vida y bienestar sin discriminar raza ni tamaño de nuestros felinos o caninos. Además hemos creado un espacio seguro para adoptar y aprender a cuidar a nuestras manscotas en casa, mejorando su estilo de vida.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <img src="<?php echo BASE_URL . 'assets/img/logo-transparente.png'; ?>" alt="logo">
-                </div>
-            </div>
+<!--img-->
+    <img src="<?php echo BASE_URL . 'assets/img/banner-nosotros.png'; ?>" class="img-fluid" alt="nosotros">
+    <!--carrusel-->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="<?php echo BASE_URL . 'assets/img/banner-nosotros.png'; ?>" class="d-block w-100" alt="...">
         </div>
-    </section>
-    <!-- Close Banner -->
+        <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        </div>
+    </div>
+    </div>
+    <!-- Close carrusel -->
 
     <!-- Start Section -->
     <section class="container py-5">
