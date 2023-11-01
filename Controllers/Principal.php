@@ -19,7 +19,7 @@ class Principal extends Controller
     public function tienda($page)
     {
         $pagina = (empty($page)) ? 1 : $page;
-        $porPagina = 15;
+        $porPagina = 3;
         $desde = ($pagina - 1) * $porPagina;
         $data['title'] = 'tienda';
         $data['productos'] = $this->model->getProductos($desde, $porPagina);
@@ -65,6 +65,12 @@ class Principal extends Controller
         $data['title'] = 'Categorias';
         $data['id_categoria'] = $id_categoria;
         $this->views->getView('principal', "categorias", $data);
+    }
+    //Vista lista deseos
+    public function deseo()
+    {
+        $data['title'] = 'Lista de deseo';
+        $this->views->getView('principal', "deseo", $data);
     }
     //Vista adoptame
     public function adoptame()

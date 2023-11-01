@@ -1,0 +1,1 @@
+const tableLista = document.querySelector('tableListaDeseo ');
