@@ -19,6 +19,7 @@
                             <div class="text-align-left align-self-center">
                             <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/img/petshop.png'; ?>" alt="tienda" /></a>
                                 <h3 class="h2">Amor en cuatro patitas, un lugar seguro para amar</h3>
+                                <br>
                                 <p>
                                 Haru Store es un E-commerce dedicado a la venta de los mejores productos para nuestros perritos y gatitos. Contamos con un amplio catálogo para que encuentres todo en un mismo lugar.
                                 </p>
@@ -61,7 +62,7 @@
                             <a href="<?php echo BASE_URL . 'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_cuidados.png'; ?>" alt="Tips&Cuidados" /></a>
                                 <h3 class="h2">Tips y Cuidados de mascotas</h3>
                                 <p>
-                                    Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, encuentra una guía aquí en Haru Store
+                                    Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, y no siempre es fácil descubrir que les hace bien a nuestros perritos y gatitos. Aquí te entregamos información y tips generales para sus cuidados.
                                 </p>
                             </div>
                         </div>
@@ -78,8 +79,6 @@
         </a>
     </div>
     <!-- End Banner -->
-
-
 
 
     <!-- Promesa -->
