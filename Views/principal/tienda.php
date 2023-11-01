@@ -125,14 +125,14 @@
                         <?php 
                         $anterior = $data['pagina'] - 1;
                         $siguiente = $data['pagina'] + 1;
-                        if($anterior > 1){
-                            echo '<li class="page-item disabled">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                        if($data['pagina'] > 1){
+                            echo '<li class="page-item">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="'.$anterior.'">Anterior</a>
                         </li>';
                         }
                         if ($data['total'] >= $siguiente){
                             echo '<li class="page-item">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-white" href="#">2</a>
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-white" href="'.$siguiente.'">Siguiente</a>
                             </li>';
                         }
                         ?>
@@ -143,28 +143,6 @@
         </div>
     </div>
     <!-- End Content -->
-
-
-
-                                </div>
-                                <!--End Slides-->
-                            </div>
-                        </div>
-                        <!--End Carousel Wrapper-->
-
-                        <!--Controls-->
-                        <div class="col-1 align-self-center">
-                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next">
-                                <i class="text-light fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                        <!--End Controls-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Brands-->
 
     <?php include_once 'Views/template-principal/footer.php'; ?>
     
