@@ -1,42 +1,88 @@
 <?php include_once 'Views/template-principal/header2.php'; ?>
 
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
+    <!-- Start Banner -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <!-- Primer banner - tienda  -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/tienda.png'; ?>" alt="Tienda Haru Store">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                            <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/img/petshop.png'; ?>" alt="tienda" /></a>
+                                <h3 class="h2">Amor en cuatro patitas, un lugar seguro para amar</h3>
+                                <p>
+                                Haru Store es un E-commerce dedicado a la venta de los mejores productos para nuestros perritos y gatitos. Contamos con un amplio catálogo para que encuentres todo en un mismo lugar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
+            <!-- End primer banner - tienda  -->
+            <!-- Segundo banner - adopción  -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/adoptemos.png'; ?>" alt="Adoptemos">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                            <a href="<?php echo BASE_URL . 'principal/publicaciones_adop'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_adopcion.png'; ?>" alt="adoptemos" /></a>
+                                <h3 class="h2">Creemos un hogar juntos lleno de amor y pelitos</h3>
+                                <p>
+                                    Conoce al nuevo miembro de tu familia y cambia realidades llenandolas de amor. <br>
+                                    Contamos con una comunidad segura para el proceso de adopción de mascotas sin discrimar. Nuestro foco es que perritos y gatitos encuentren un nuevo hogar lleno de amor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End segundo banner - adopcion  -->
+            <!-- Tercer banner - cuidados  -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/bienestar.png'; ?>" alt="Cuidado y Bienestar">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                            <a href="<?php echo BASE_URL . 'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_cuidados.png'; ?>" alt="Tips&Cuidados" /></a>
+                                <h3 class="h2">Tips y Cuidados de mascotas</h3>
+                                <p>
+                                    Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, encuentra una guía aquí en Haru Store
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- End tercer banner - cuidados  -->
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
     </div>
+    <!-- End Banner -->
 
 
-<!--img-->
-    <img src="<?php echo BASE_URL . 'assets/img/banner-nosotros.png'; ?>" class="img-fluid" alt="nosotros">
-    <!--carrusel-->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img src="<?php echo BASE_URL . 'assets/img/banner-nosotros.png'; ?>" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        </div>
-    </div>
-    </div>
-    <!-- Close carrusel -->
 
-    <!-- Start Section -->
+
+    <!-- Promesa -->
     <section class="container py-5">
         <div class="row text-center pt-5 pb-3">
             <div class="col-lg-6 m-auto">
