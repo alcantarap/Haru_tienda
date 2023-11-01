@@ -16,9 +16,16 @@ class Principal extends Controller
         $this->views->getView('principal', "nosotros", $data);
     }
     //Vista Tienda
-    public function tienda()
+    public function tienda($page)
     {
+        $pagina = (empty($page)) ? 1 : $page ;
+        $porPagina = 3;
+        $desde = ($pagina - 1) * $porPagina;
         $data['title'] = 'tienda';
+        $data['productos'] = $this->model->getProductos($desde, $porPagina);
+        $data['pagina'] = $pagina;
+        $total = $this->model->getTotalProductos();
+        $data['total'] = ceil($total['total'] / $porPagina);
         $this->views->getView('principal', "tienda", $data);
     }
     //Vista detalle
