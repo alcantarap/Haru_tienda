@@ -1,1 +1,4 @@
-const tableLista = document.querySelector('tableListaDeseo ');
+const tableLista = document.querySelector('tableListaDeseo tbody');
+document.addEventListener('DOMContentLoaded', function() {
+    alert('sfsdfsdfdsf')
+})
