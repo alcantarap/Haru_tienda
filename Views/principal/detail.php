@@ -197,7 +197,6 @@
                         <div class="card-body">
                             <a href="<?php echo BASE_URL . 'principal/detail/' . $producto['id'];?>" class="h3 text-decoration-none"><?php echo $relacion['nombre'];?></a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                <li>M/L/X/XL</li>
                                 <li class="pt-2">
                                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -229,11 +228,11 @@
     <?php include_once 'Views/template-principal/footer.php'; ?>
 
     <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/templatemo.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="<?php echo BASE_URL;?>assets/js/jquery-1.11.0.min.js"></script>
+    <script src="<?php echo BASE_URL;?>assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<?php echo BASE_URL;?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo BASE_URL;?>assets/js/templatemo.js"></script>
+    <script src="<?php echo BASE_URL;?>assets/js/custom.js"></script>
     <!-- End Script -->
 
     <!-- Start Slider Script -->
