@@ -1,13 +1,13 @@
 <?php
 class Principal extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         session_start();
     }
     public function index()
     {
-
     }
     //Vista Nosotros "Quienes somos"
     public function nosotros()
@@ -18,7 +18,7 @@ class Principal extends Controller
     //Vista Tienda
     public function tienda($page)
     {
-        $pagina = (empty($page)) ? 1 : $page ;
+        $pagina = (empty($page)) ? 1 : $page;
         $porPagina = 15;
         $desde = ($pagina - 1) * $porPagina;
         $data['title'] = 'tienda';
@@ -34,6 +34,35 @@ class Principal extends Controller
         $data['producto'] = $this->model->getProducto($id_producto);
         $data['title'] = $data['producto']['nombre'];
         $this->views->getView('principal', "detail", $data);
+    }
+    //Vista categoria
+    public function categorias($datos)
+    {
+        $id_categoria =1;
+        $page = 1;
+        $array = explode(',' ,$datos);
+        if (isset($array[0])) {
+            if(!empty($array[0])) {
+                $id_categoria = $array[0];
+            }
+        }
+        if (isset($array[1])) {
+            if(!empty($array[1])) {
+                $page = $array[1];
+            }
+        }
+        $pagina = (empty($page)) ? 1 : $page;
+        $porPagina = 15;
+        $desde = ($pagina - 1) * $porPagina;
+
+        $data['pagina'] = $pagina;
+        $total = $this->model->getTotalProductosCat($id_categoria);
+        $data['total'] = ceil($total['total'] / $porPagina);
+
+        $data['productos'] = $this->model->getProductosCat($id_categoria, $desde, $porPagina);
+        $data['title'] = 'Categorias';
+        $data['id_categoria'] = $id_categoria;
+        $this->views->getView('principal', "categorias", $data);
     }
     //Vista adoptame
     public function adoptame()
