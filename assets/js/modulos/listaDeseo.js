@@ -12,22 +12,50 @@ function getListaDeseo(){
         if (this.readyState == 4 && this.status == 200) {
             const res = JSON.parse(this.responseText);
             let html = '';
-            res.forEach(producto => {
+            res.productos.forEach(producto => {
                 html += `<tr>
                     <td>
                     <img class="img-thumbnail rounded-circle" src="${producto.imagen}" alt="" width="100">
                     </td>
                     <td>${producto.nombre}</td>
-                    <td>${producto.precio}</td>
-                    <td>${producto.cantidad}</td>
+                    <td><span class="badge bg-warning">${res.moneda + ' ' + producto.precio}</span></td>
+                    <td><span class="badge bg-success">${producto.cantidad}</span></td>
                     <td>
-                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard"><i class="fas fa-trash"></i></button>
-                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard"><i class="fas fa-cart-plus"></i></button>
+                        <button class="btn btn-success btn-lg btnEliminarDeseo" type="submit" prod="${producto.id}"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-success btn-lg" type="submit" prod=""name=""><i class="fas fa-cart-plus"></i></button>
                     </td>
                     
                 </tr>`;
             });
             tableLista.innerHTML = html;
+            btnEliminarDeseo();
         }
     }
+}
+
+function btnEliminarDeseo() {
+    let listaEliminar = document.querySelectorAll('.btnEliminarDeseo');
+    for (let i = 0; i < listaEliminar.length; i++) {
+        listaEliminar[i]. addEventListener('click', function(){
+            let idProducto = listaEliminar[i].getAttribute('prod');
+            eliminarListaDeseo(idProducto);
+        })
+    }
+}
+
+function eliminarListaDeseo(idProducto) {
+    console.log(listaDeseo);
+    for (let i = 0; i < listaDeseo.length; i++) {
+        if (listaDeseo[i]['idProducto'] == idProducto) {
+            listaDeseo.splice(i, 1);
+        }
+    }
+    localStorage.setItem('listaDeseo', JSON.stringify(listaDeseo));
+    getListaDeseo();
+    cantidadDeseo();
+    Swal.fire(
+        'Aviso?',
+        'Producto eliminado de la lista',
+        'success'
+    )
 }
