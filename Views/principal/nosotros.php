@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header2.php'; ?>
+<?php include_once 'Views/template-principal/header.php'; ?>
 
     <!-- Start Banner -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -17,9 +17,8 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                            <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/img/petshop.png'; ?>" alt="tienda" /></a>
+                            <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/img/petshop.png'; ?>" alt="tienda" /></a> <br>
                                 <h3 class="h2">Amor en cuatro patitas, un lugar seguro para amar</h3>
-                                <br>
                                 <p>
                                 Haru Store es un E-commerce dedicado a la venta de los mejores productos para nuestros perritos y gatitos. Contamos con un amplio catálogo para que encuentres todo en un mismo lugar.
                                 </p>
@@ -34,11 +33,11 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/adoptemos.png'; ?>" alt="Adoptemos">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/2adoptemos.png'; ?>" alt="Adoptemos">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                            <a href="<?php echo BASE_URL . 'principal/publicaciones_adop'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_adopcion.png'; ?>" alt="adoptemos" /></a>
+                            <a href="<?php echo BASE_URL . 'principal/publicaciones_adop'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_adopcion.png'; ?>" alt="adoptemos" /></a><br>
                                 <h3 class="h2">Creemos un hogar juntos lleno de amor y pelitos</h3>
                                 <p>
                                     Conoce al nuevo miembro de tu familia y cambia realidades llenandolas de amor. <br>
@@ -55,11 +54,11 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/bienestar.png'; ?>" alt="Cuidado y Bienestar">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/2bienestar.png'; ?>" alt="Cuidado y Bienestar">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                            <a href="<?php echo BASE_URL . 'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_cuidados.png'; ?>" alt="Tips&Cuidados" /></a>
+                            <a href="<?php echo BASE_URL . 'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/zona_cuidados.png'; ?>" alt="Tips&Cuidados" /></a><br>
                                 <h3 class="h2">Tips y Cuidados de mascotas</h3>
                                 <p>
                                     Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, y no siempre es fácil descubrir que les hace bien a nuestros perritos y gatitos. Aquí te entregamos información y tips generales para sus cuidados.

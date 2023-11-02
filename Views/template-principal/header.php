@@ -4,16 +4,16 @@
 <head>
     <title><?php echo TITLE . ' - ' . $data['title']; ?></title>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL;?>assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo BASE_URL;?>assets/favicon/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo BASE_URL;?>assets/favicon/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo BASE_URL;?>assets/favicon/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo BASE_URL;?>assets/favicon/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASE_URL;?>assets/favicon/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo BASE_URL;?>assets/favicon/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo BASE_URL;?>assets/favicon/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo BASE_URL;?>assets/favicon/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo BASE_URL;?>assets/favicon/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL;?>assets/favicon/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo BASE_URL;?>assets/favicon/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL;?>assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo BASE_URL;?>assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL;?>assets/favicon/favicon-16x16.png">
@@ -45,14 +45,9 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-<!--
-            <a class="navbar-brand text-success logo h1 align-self-center" href="<?php echo BASE_URL; ?>">
-                Haru Store
-            </a>
--->
-<!--LOGO IMG-->
-<a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/img/logo-letras3.png'; ?>" alt="logo" /></a>
-<!--FIN LOGO IMG-->
+    <!--LOGO IMG-->
+    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/img/logo-letras3.png'; ?>" alt="logo" /></a>
+    <!--FIN LOGO IMG-->
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,9 +56,6 @@
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo BASE_URL; ?>">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo BASE_URL . 'principal/tienda'; ?>">Tienda</a>
                         </li>
@@ -129,74 +121,3 @@
 
 
 
-    <!-- Start Banner Hero -->
-    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="assets/img/logo-transparente.png">
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>Haru Store</b></h1>
-                                <h3 class="h2">Amor en cuatro patitas, un lugar seguro para amar</h3>
-                                <p>
-                                    ¡Bienvenidos a Haru Store! Un espacio seguro para entregar amor. E-commerce dedicado al cuidado de tus mascotas
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="assets/img/silueta.png" alt="">
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left">
-                                <h1 class="h1">¡Adoptame!</h1>
-                                <h3 class="h2">y creemos un hogar juntos</h3>
-                                <p>
-                                    Conoce al nuevo miembro de tu familia y cambia realidades llenandolas de amor.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="assets/img/tips_y_cuidados.png" alt="">
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left">
-                                <h1 class="h1">¡Cuidame!</h1>
-                                <h3 class="h2">Tips y Cuidados de mascotas</h3>
-                                <p>
-                                    Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, encuentra una guía aquí en Haru Store
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-            <i class="fas fa-chevron-left"></i>
-        </a>
-        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-            <i class="fas fa-chevron-right"></i>
-        </a>
-    </div>
-    <!-- End Banner Hero -->

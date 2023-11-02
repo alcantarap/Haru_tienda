@@ -73,6 +73,8 @@
                 <ul class="list-unstyled text-light footer-link-list">
                     <li><a class="text-decoration-none" href="<?php echo BASE_URL; ?>"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-record-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z"/>
                     </svg> &nbsp; Home Haru Store</a></li>
+                    <li><a class="text-decoration-none" href="<?php echo BASE_URL . 'principal/tienda'; ?>"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-record-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z"/>
+                    </svg> &nbsp; Tienda</a></li>
                     <li><a class="text-decoration-none" href="<?php echo BASE_URL . 'principal/adoptame'; ?>"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-record-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z"/>
                     </svg> &nbsp; ¡Adoptame!</a></li>
                     <li><a class="text-decoration-none" href="<?php echo BASE_URL . 'principal/cuidame'; ?>"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-record-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z"/>

@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header2.php'; ?>
+<?php include_once 'Views/template-principal/header.php'; ?>
 
 
 <!-- Start Content Page -->
