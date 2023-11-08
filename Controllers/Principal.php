@@ -19,7 +19,7 @@ class Principal extends Controller
     public function tienda($page)
     {
         $pagina = (empty($page)) ? 1 : $page;
-        $porPagina = 3;
+        $porPagina = 9;
         $desde = ($pagina - 1) * $porPagina;
         $data['title'] = 'tienda';
         $data['productos'] = $this->model->getProductos($desde, $porPagina);
