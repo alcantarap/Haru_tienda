@@ -42,9 +42,5 @@ class PrincipalModel extends Query
         return $this->selectAll($sql);
     }
     //Lista Deseos
-    public function getListaDeseo($id_producto)
-    {
-        $sql = "SELECT * FROM productos WHERE id = $id_producto";
-        return $this->select($sql);
-    }
+
 }
