@@ -94,7 +94,7 @@
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark" id="btnCantidadDeseo">0</span>
                     </a>
                     <!--Usuario-->
-                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/clientes/'?>">
+                    <a class="nav-icon position-relative text-decoration-none" href="" data-bs-toggle="modal" data-bs-target="#modalLogin">
                         <i class="fas fa-fw fa-user text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark"></span>
                     </a>
