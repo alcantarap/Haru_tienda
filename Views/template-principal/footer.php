@@ -7,6 +7,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="table-resposive">
                 <table class="table table-bodered table-striped table-hover align-middle" id="tableListaCarrito">
                     <thead>
                         <tr>
@@ -29,6 +30,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
             <div class="modal-footer">
                 <h3 id="totalGeneral"></h3>
