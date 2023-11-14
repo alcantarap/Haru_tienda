@@ -53,7 +53,7 @@
             <div class="modal-body m-3">
                 <form method="get" action="">
                     <div class="text-center">
-                        <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo-transparente.png'; ?>" alt="Logo" width="200">
+                        <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="200">
                     </div>
                     <div class="row">
                         <div class="cold-12-md" id="frmLogin">
@@ -65,30 +65,34 @@
                                 <label for="ClaveLogin"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
                                 <input id="ClaveLogin" class="form-control" type="text" name="ClaveLogin" placeholder="Password">
                             </div>
+                            <a href="#" id="btnRegister">¿Todavía no tienes cuenta en Haru Store?</a>
+                            <div class="float-end">
+                                <button class="btn btn-primary btn-lg" type="button">Login</button>
+                            </div>
                         </div>
+
                         <!--Formulario de Registro-->
-                        <div class="cold-12-md d-none">
+                        <div class="cold-12-md d-none" id="frmRegister">
                             <div class="form-group mb-3">
-                                <label for="NombreRegistro"><i class="fas fa-list"></i>&nbsp; Nombre</label>
-                                <input id="NombreRegistro" class="form-control" type="text" name="NombreRegistro" placeholder="E-mail">
+                                <label for="nombreRegistro"><i class="fas fa-list"></i>&nbsp; Nombre</label>
+                                <input id="nombreRegistro" class="form-control" type="text" name="nombreRegistro" placeholder="Nombre">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="CorreoRegistro"><i class="fas fa-envelope"></i>&nbsp; Correo</label>
-                                <input id="CorreoRegistro" class="form-control" type="text" name="CorreoRegistro" placeholder="E-mail">
+                                <label for="correoRegistro"><i class="fas fa-envelope"></i>&nbsp; Correo</label>
+                                <input id="correoRegistro" class="form-control" type="text" name="correoRegistro" placeholder="E-mail">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="ClaveRegistro"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
-                                <input id="ClaveRegistro" class="form-control" type="text" name="ClaveRegistro" placeholder="Password">
+                                <label for="claveRegistro"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
+                                <input id="claveRegistro" class="form-control" type="text" name="claveRegistro" placeholder="Password">
+                            </div>
+                            <a href="#" id="btnLogin">¿Ya tienes una cuenta?</a>
+                            <div class="float-end">
+                                <button class="btn btn-primary btn-lg" type="button" id="registrarse">Registrarse</button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Login</button>
-                <button class="btn btn-danger" type="button">Registrarse</button>
-            </div>
-
         </div>
     </div>
 </div>
@@ -235,5 +239,6 @@
     const base_url = '<?php echo BASE_URL; ?>';
 </script>
 <script src="<?php echo BASE_URL; ?>assets/js/carrito.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/login.js"></script>
 
 <!-- End Script -->
