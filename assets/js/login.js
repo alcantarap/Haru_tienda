@@ -51,7 +51,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function enviarCorreo(correo, token){
+        let formData= new FormData();
+        formData.append("token", token);
+        formData.append("correo", correo);
+        const url = base_url + "clientes/enviarCorreo";
+        const http = new XMLHttpRequest();
+        http.open("POST", url, true);
+        http.send(formData);
+        http.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                const res = JSON.parse(this.responseText);
+                Swal.fire(
+                    'Aviso?',
+                    res.msg,
+                    res.icono
+                );
+                if (res.icono == 'success') {
+                    setTimeout(() => {
+                        enviarCorreo(correoRegistro.value, res.token);
+                    }, 2000);
+                }
+                }
 
+            };
 }
 
 

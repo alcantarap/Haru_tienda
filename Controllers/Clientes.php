@@ -26,9 +26,10 @@ class Clientes extends Controller
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $clave = $_POST['clave'];
+            $token = md5($correo);
             $hash = password_hash($clave, PASSWORD_DEFAULT);
             $data = $this->model->registroDirecto($nombre, $correo, $hash, $token);
-            $this->enviarCorreo($correo, $token);
+
             if ($data > 0) {
                 $mensaje = array('msg' => 'Registrado correctamente', 'icono' => 'success' , 'token'=> $token);
             } else {
@@ -39,38 +40,44 @@ class Clientes extends Controller
         }
     }
 
-    public function enviarCorreo($correo, $token)
+    public function enviarCorreo()
     {
-        $mail = new PHPMailer(true);
+        if (isset($POST['correo']) && isset($POST['token'])) {
+            $mail = new PHPMailer(true);
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = HOST_SMTP;                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = USER_SMTP;                     //SMTP username
-            $mail->Password   = PASS_SMTP;                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = PUERTO_SMTP;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-            //Recipients
-            $mail->setFrom('denisse.ap06@gmail.com', TITLE);
-            $mail->addAddress($correo);     
-
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Mensaje desde la: ' . TITLE;
-            $mail->Body    = 'Para verificar tu correo en nuestra tienda <a href="'.BASE_URL.'clientes/verificarCorreo/'.$token.'">CLIC AQUÍ</a>';
-            $mail->AltBody = 'Gracias por su preferencia';
-
-            $mail->send();
-            echo 'CORREO ENVIADO';
-        } catch (Exception $e) {
-            echo "Error al enviar correo: {$mail->ErrorInfo}";
+            try {
+                //Server settings
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                $mail->isSMTP();                                            //Send using SMTP
+                $mail->Host       = HOST_SMTP;                     //Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                $mail->Username   = USER_SMTP;                     //SMTP username
+                $mail->Password   = PASS_SMTP;                               //SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                $mail->Port       = PUERTO_SMTP;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    
+                //Recipients
+                $mail->setFrom('denisse.ap06@gmail.com', TITLE);
+                $mail->addAddress($POST['correo']);     
+    
+                //Content
+                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->Subject = 'Mensaje desde la: ' . TITLE;
+                $mail->Body    = 'Para verificar tu correo en nuestra tienda <a href="'.BASE_URL.'clientes/verificarCorreo/'.($POST['token']).'">CLIC AQUÍ</a>';
+                $mail->AltBody = 'Gracias por su preferencia';
+    
+                $mail->send();
+                echo 'CORREO ENVIADO';
+            } catch (Exception $e) {
+                echo "Error al enviar correo: {$mail->ErrorInfo}";
+            }
+        } else {
+            echo 'error fatal';
         }
+        
     }
-    public function verificarCorreo($token){
+    public function verificarCorreo($token)
+    {
         print_r($token);
     }
 }
