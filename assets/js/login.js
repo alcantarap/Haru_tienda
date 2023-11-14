@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         frmRegister.classList.remove('d-none');
 
     })
-    
     btnLogin.addEventListener('click', function() {
         frmRegister.classList.add('d-none');
         frmLogin.classList.remove('d-none');
@@ -22,12 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //Registro de Usuarios
-    registrarse.addEventListener('click', function () {
+    registrarse.addEventListener('click', function() {
         let formData= new FormData();
         formData.append("nombre", nombreRegistro.value);
         formData.append("correo", correoRegistro.value);
         formData.append("clave", claveRegistro.value);
-
         const url = base_url + "clientes/registroDirecto";
         const http = new XMLHttpRequest();
         http.open("POST", url, true);
@@ -35,10 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
-                Swal.fire("Aviso?", res.msg, res.icono);
+                Swal.fire(
+                    'Aviso?',
+                    res.msg,
+                    res.icono
+                );
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        window.location.reload();
+                        enviarCorreo(correoRegistro.value, res.token);
                     }, 2000);
                 }
                 }
@@ -47,5 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 });
+
+function enviarCorreo(correo, token){
+
+}
 
 
