@@ -20,21 +20,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="modal-footer">
                 <h3 id="totalGeneral"></h3>
-                <a class="btn btn-outline-primary" href="<?php echo BASE_URL . 'clientes'; ?>">Procesar Pedido</a>
+                <a class="btn btn-outline-success" href="<?php echo BASE_URL . 'clientes'; ?>">Procesar Pedido</a>
             </div>
 
         </div>
@@ -62,12 +54,12 @@
                                 <input id="CorreoLogin" class="form-control" type="text" name="CorreoLogin" placeholder="E-mail">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="ClaveLogin"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
-                                <input id="ClaveLogin" class="form-control" type="text" name="ClaveLogin" placeholder="Password">
+                                <label for="claveLogin"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
+                                <input id="claveLogin" class="form-control" type="text" name="claveLogin" placeholder="Contraseñas">
                             </div>
                             <a href="#" id="btnRegister">¿Todavía no tienes cuenta en Haru Store?</a>
                             <div class="float-end">
-                                <button class="btn btn-primary btn-lg" type="button">Login</button>
+                                <button class="btn btn-success btn-lg" type="button">Login</button>
                             </div>
                         </div>
 
@@ -85,9 +77,9 @@
                                 <label for="claveRegistro"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
                                 <input id="claveRegistro" class="form-control" type="text" name="claveRegistro" placeholder="Password">
                             </div>
-                            <a href="#" id="btnLogin">¿Ya tienes una cuenta?</a>
+                                <a href="#" id="btnLogin">¿ya tienes cuenta en Haru Store?</a>
                             <div class="float-end">
-                                <button class="btn btn-primary btn-lg" type="button" id="registrarse">Registrarse</button>
+                                <button class="btn btn-success btn-lg" type="button" id="registrarse">Registrarse</button>
                             </div>
                         </div>
                     </div>

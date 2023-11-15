@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         frmRegister.classList.add('d-none');
         frmLogin.classList.remove('d-none');
 
-    });
+    })
 
     //Registro de Usuarios
     registrarse.addEventListener('click', function() {
@@ -33,20 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
-                Swal.fire(
-                    'Aviso?',
-                    res.msg,
-                    res.icono
-                );
+                Swal.fire('Aviso?', res.msg, res.icono);
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        enviarCorreo(correoRegistro.value, res.token);
+                        window.location.reaload();
                     }, 2000);
                 }
-                }
+            }
 
-            };
-        });
+        }
+    });
 
 });
 
@@ -74,6 +70,7 @@ function enviarCorreo(correo, token){
                 }
 
             };
+            
 }
 
 

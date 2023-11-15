@@ -26,7 +26,6 @@
                                 </tbody>
                             </table>
                     </div>
-
                     <div class="card-footer text-end">
                         <h3 id="totalProducto"></h3>
                     </div>
@@ -36,8 +35,8 @@
             <!--Columna Logo-->
             <div class="col-md-4">
                 <div class="card shadow-lg">
-                    <h5 class="card-body">
-                        <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo">
+                    <h5 class="card-body text-center">
+                        <img class="img-thumbnail rounded-circle" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="170">
                     </h5>
                     <hr>
                     <p>NOMBRE CLIENTE</p>
