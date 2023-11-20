@@ -17,7 +17,7 @@ class Clientes extends Controller
         $data['title'] = 'Tu perfil';
         $this->views->getView('principal', "perfil", $data);
     }
-
+    /*Registro de usuarios en formulario*/
     public function registroDirecto()
     {
         if (isset($_POST['nombre']) && isset($_POST['clave'])) {
@@ -38,6 +38,7 @@ class Clientes extends Controller
         }
     }
 
+    /* Envio de Correo a usuario para validar*/
     public function enviarCorreo()
     {
         if (isset($POST['correo']) && isset($POST['token'])) {
@@ -45,21 +46,21 @@ class Clientes extends Controller
 
             try {
                 //Server settings
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = HOST_SMTP;                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = USER_SMTP;                     //SMTP username
-                $mail->Password   = PASS_SMTP;                               //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                $mail->Port       = PUERTO_SMTP;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+                $mail->isSMTP();                                          
+                $mail->Host       = HOST_SMTP;                  
+                $mail->SMTPAuth   = true;                                  
+                $mail->Username   = USER_SMTP;                     
+                $mail->Password   = PASS_SMTP;                           
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           
+                $mail->Port       = PUERTO_SMTP;                                    
     
                 //Recipients
                 $mail->setFrom('denisse.ap06@gmail.com', TITLE);
                 $mail->addAddress($POST['correo']);     
     
                 //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->isHTML(true);                                  
                 $mail->Subject = 'Mensaje desde la: ' . TITLE;
                 $mail->Body    = 'Para verificar tu correo en nuestra tienda <a href="'.BASE_URL.'clientes/verificarCorreo/'.($POST['token']).'">CLIC AQUÍ</a>';
                 $mail->AltBody = 'Gracias por su preferencia';
