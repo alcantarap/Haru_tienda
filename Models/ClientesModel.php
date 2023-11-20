@@ -1,6 +1,7 @@
 <?php
-class ClientesModel extends Query{
- 
+class ClientesModel extends Query
+{
+
     public function __construct()
     {
         parent::__construct();
@@ -16,7 +17,6 @@ class ClientesModel extends Query{
             $res = 0;
         }
         return $res;
-        
     }
 }
  

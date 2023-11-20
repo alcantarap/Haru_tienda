@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
-                Swal.fire('Aviso?', res.msg, res.icono);
+                Swal.fire("Aviso?", res.msg, res.icono);
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        window.location.reaload();
+                        window.location.reload();
                     }, 2000);
                 }
             }

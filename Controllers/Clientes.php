@@ -20,8 +20,6 @@ class Clientes extends Controller
 
     public function registroDirecto()
     {
-        print_r($_POST);
-        exit;
         if (isset($_POST['nombre']) && isset($_POST['clave'])) {
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
