@@ -50,8 +50,8 @@
                     <div class="row">
                         <div class="cold-12-md" id="frmLogin">
                             <div class="form-group mb-3">
-                                <label for="CorreoLogin"><i class="fas fa-envelope"></i>&nbsp; Correo</label>
-                                <input id="CorreoLogin" class="form-control" type="text" name="CorreoLogin" placeholder="E-mail">
+                                <label for="correoLogin"><i class="fas fa-envelope"></i>&nbsp; Correo</label>
+                                <input id="correoLogin" class="form-control" type="text" name="correoLogin" placeholder="E-mail">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="claveLogin"><i class="fas fa-key"></i>&nbsp; Contraseña</label>
@@ -59,7 +59,7 @@
                             </div>
                             <a href="#" id="btnRegister">¿Todavía no tienes cuenta en Haru Store?</a>
                             <div class="float-end">
-                                <button class="btn btn-success btn-lg" type="button">Login</button>
+                                <button class="btn btn-primary btn-lg" type="button">Login</button>
                             </div>
                         </div>
 
@@ -79,7 +79,7 @@
                             </div>
                                 <a href="#" id="btnLogin">¿ya tienes cuenta en Haru Store?</a>
                             <div class="float-end">
-                                <button class="btn btn-success btn-lg" type="button" id="registrarse">Registrarse</button>
+                                <button class="btn btn-primary btn-lg" type="button" id="registrarse">Registrarse</button>
                             </div>
                         </div>
                     </div>
@@ -191,9 +191,6 @@
                                 <path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
                             </svg> &nbsp; Quienes somos</a></li>
                 </ul>
-                <!--
-                <img src="./assets/img/silueta.png" width="180" height="180" class="rounded float-end" alt="...">
--->
             </div>
 
         </div>

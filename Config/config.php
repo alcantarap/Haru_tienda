@@ -1,5 +1,5 @@
 <?php
-const BASE_URL = "http://localhost/Haru_tienda/";
+const BASE_URL = "http://localhost/haru_tienda/";
 const HOST = "localhost";
 const USER = "root";
 const PASS = "";

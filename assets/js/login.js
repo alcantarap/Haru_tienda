@@ -5,8 +5,9 @@ const btnLogin = document.querySelector('#btnLogin');
 const registrarse= document.querySelector('#registrarse');
 
 const nombreRegistro= document.querySelector('#nombreRegistro');
-const correoRegistro= document.querySelector('#correoRegistro');
 const claveRegistro= document.querySelector('#claveRegistro');
+const correoRegistro= document.querySelector('#correoRegistro');
+
 
 document.addEventListener('DOMContentLoaded', function() {
     btnRegister.addEventListener('click', function() {
@@ -24,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     registrarse.addEventListener('click', function() {
         let formData= new FormData();
         formData.append("nombre", nombreRegistro.value);
-        formData.append("correo", correoRegistro.value);
         formData.append("clave", claveRegistro.value);
+        formData.append("correo", correoRegistro.value);
         const url = base_url + "clientes/registroDirecto";
         const http = new XMLHttpRequest();
         http.open("POST", url, true);
