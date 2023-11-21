@@ -17,6 +17,7 @@ class Clientes extends Controller
         $data['title'] = 'Tu perfil';
         $this->views->getView('principal', "perfil", $data);
     }
+    
     /*Registro de usuarios en formulario*/
     public function registroDirecto()
     {
@@ -38,6 +39,7 @@ class Clientes extends Controller
         }
     }
 
+
     /* Envio de Correo a usuario para validar*/
     public function enviarCorreo()
     {
@@ -46,7 +48,7 @@ class Clientes extends Controller
 
             try {
                 //Server settings
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+                $mail->SMTPDebug = 0;                     
                 $mail->isSMTP();                                          
                 $mail->Host       = HOST_SMTP;                  
                 $mail->SMTPAuth   = true;                                  
@@ -66,13 +68,15 @@ class Clientes extends Controller
                 $mail->AltBody = 'Gracias por su preferencia';
     
                 $mail->send();
-                echo 'CORREO ENVIADO';
+                $mensaje = array('msg' => 'Correo enviado, Revisa tu bandeja de entrada', 'icono' => 'success');
             } catch (Exception $e) {
-                echo "Error al enviar correo: {$mail->ErrorInfo}";
+                $mensaje = array('msg' => 'ERROR al enviar Correo: ' . $mail->ErrorInfo, 'icono' => 'error');
             }
         } else {
-            echo 'error fatal';
+            $mensaje = array('msg' => 'Error Fatal', 'icono' => 'error');
         }
+        echo json_encode($mensaje, JSON_UNESCAPED_UNICODE);
+        die();
         
     }
     public function verificarCorreo($token)

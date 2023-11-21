@@ -17,6 +17,7 @@ class ClientesModel extends Query
             $res = 0;
         }
         return $res;
+        
     }
 }
  

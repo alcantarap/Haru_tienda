@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+//Función de Validación de Correo al registrarse en la página
 function enviarCorreo(correo, token){
         let formData= new FormData();
         formData.append("token", token);
@@ -65,7 +66,7 @@ function enviarCorreo(correo, token){
                 );
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        enviarCorreo(correoRegistro.value, res.token);
+                        window.location.reload();
                     }, 2000);
                 }
                 }
