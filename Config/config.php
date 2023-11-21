@@ -9,7 +9,7 @@ const TITLE = "Haru Store";
 const MONEDA = "CLP";
 const CLIENT_ID = "";
 const USER_SMTP = "denisse.ap06@gmail.com";
-const PASS_SMTP= "fxrn tzht xtne fvub"; /* Contraseña de aplicación "Tienda_virtual_php"*/
+const PASS_SMTP= "wovs umdm bwnw tqqv"; /* Contraseña de aplicación "Haru-Tienda-PHP"*/
 const PUERTO_SMTP = 465;
 const HOST_SMTP = "smtp.gmail.com";
 ?>

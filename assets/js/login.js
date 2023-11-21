@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Registro de Usuarios
     registrarse.addEventListener('click', function() {
+        if (nombreRegistro.value == '' || correoRegistro == '' || claveRegistro.value == '') {
+            Swal.fire("Aviso?", 'TODOS LOS CAMPOS SON REQUERIDOS', 'warning');
+            return;
+        }
         let formData= new FormData();
         formData.append("nombre", nombreRegistro.value);
         formData.append("clave", claveRegistro.value);
@@ -37,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire("Aviso?", res.msg, res.icono);
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        window.location.reload();
+                        enviarCorreo(correoRegistro.value, res.token);
                     }, 2000);
                 }
             }
@@ -48,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Función de Validación de Correo al registrarse en la página
-function enviarCorreo(correo, token){
-        let formData= new FormData();
+function enviarCorreo(correo, token) {
+    let formData= new FormData();
         formData.append("token", token);
         formData.append("correo", correo);
         const url = base_url + "clientes/enviarCorreo";

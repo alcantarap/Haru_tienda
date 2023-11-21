@@ -15,9 +15,10 @@ class Clientes extends Controller
     public function index()
     {
         $data['title'] = 'Tu perfil';
+        $data['verificar'] = $this->model->getVerificar($_SESSION['correo']);
         $this->views->getView('principal', "perfil", $data);
     }
-    
+
     /*Registro de usuarios en formulario*/
     public function registroDirecto()
     {
@@ -25,14 +26,20 @@ class Clientes extends Controller
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $clave = $_POST['clave'];
-            $token = md5($correo);
-            $hash = password_hash($clave, PASSWORD_DEFAULT);
-            $data = $this->model->registroDirecto($nombre, $correo, $hash, $token);
-
-            if ($data > 0) {
-                $mensaje = array('msg' => 'Registrado correctamente', 'icono' => 'success' , 'token'=> $token);
+            $verificar = $this->model->getVerificar($correo);
+            if (empty($verificar)) {
+                $token = md5($correo);
+                $hash = password_hash($clave, PASSWORD_DEFAULT);
+                $data = $this->model->registroDirecto($nombre, $correo, $hash, $token);
+                if ($data > 0) {
+                    $_SESSION['correo'] = $correo;
+                    $_SESSION['nombre'] = $nombre;
+                    $mensaje = array('msg' => 'Registrado correctamente', 'icono' => 'success', 'token' => $token);
+                } else {
+                    $mensaje = array('msg' => 'Error al registrarse', 'icono' => 'error');
+                }
             } else {
-                $mensaje = array('msg' => 'Error al registrarse', 'icono' => 'error');
+                $mensaje = array('msg' => 'Ya tienes una cuenta registrada', 'icono' => 'warning');
             }
             echo json_encode($mensaje, JSON_UNESCAPED_UNICODE);
             die();
@@ -40,33 +47,35 @@ class Clientes extends Controller
     }
 
 
+
     /* Envio de Correo a usuario para validar*/
     public function enviarCorreo()
     {
-        if (isset($POST['correo']) && isset($POST['token'])) {
+        if (isset($_POST['correo']) && isset($_POST['token'])) {
             $mail = new PHPMailer(true);
 
             try {
                 //Server settings
-                $mail->SMTPDebug = 0;                     
-                $mail->isSMTP();                                          
-                $mail->Host       = HOST_SMTP;                  
-                $mail->SMTPAuth   = true;                                  
-                $mail->Username   = USER_SMTP;                     
-                $mail->Password   = PASS_SMTP;                           
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           
-                $mail->Port       = PUERTO_SMTP;                                    
-    
+                $mail->SMTPDebug = 0;
+                $mail->isSMTP();
+                $mail->Host       = HOST_SMTP;
+                $mail->SMTPAuth   = true;
+                $mail->Username   = USER_SMTP;
+                $mail->Password   = PASS_SMTP;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->Port       = PUERTO_SMTP;
+
                 //Recipients
                 $mail->setFrom('denisse.ap06@gmail.com', TITLE);
-                $mail->addAddress($POST['correo']);     
-    
+                $mail->addAddress($_POST['correo']);
+
                 //Content
-                $mail->isHTML(true);                                  
+                $mail->isHTML(true);
                 $mail->Subject = 'Mensaje desde la: ' . TITLE;
-                $mail->Body    = 'Para verificar tu correo en nuestra tienda <a href="'.BASE_URL.'clientes/verificarCorreo/'.($POST['token']).'">CLIC AQUÍ</a>';
+                $mail->Body    = 'Para verificar tu correo en nuestra tienda has <a href="' . BASE_URL . 'clientes/verificarCorreo/' . ($_POST['token']) . '">CLIC AQUÍ</a>';
                 $mail->AltBody = 'Gracias por su preferencia';
-    
+
+                //Envio de correo - MENSAJE
                 $mail->send();
                 $mensaje = array('msg' => 'Correo enviado, Revisa tu bandeja de entrada', 'icono' => 'success');
             } catch (Exception $e) {
@@ -77,10 +86,13 @@ class Clientes extends Controller
         }
         echo json_encode($mensaje, JSON_UNESCAPED_UNICODE);
         die();
-        
     }
     public function verificarCorreo($token)
     {
-        print_r($token);
+        $verificar = $this->model->getToken($token);
+        if (!empty($verificar)) {
+            $data = $this->model->actualizarVerify($verificar['id']);
+            header('Location: ' . BASE_URL . 'clientes');
+        }
     }
 }
