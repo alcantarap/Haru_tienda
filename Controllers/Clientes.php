@@ -17,12 +17,12 @@ class Clientes extends Controller
         $data['title'] = 'Tu perfil';
         $data['verificar'] = $this->model->getVerificar($_SESSION['correo']);
         $this->views->getView('principal', "perfil", $data);
-    }
+    } 
 
     /*Registro de usuarios en formulario*/
     public function registroDirecto()
     {
-        if (isset($_POST['nombre']) && isset($_POST['clave'])) {
+        if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['clave'])) {
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $clave = $_POST['clave'];

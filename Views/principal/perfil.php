@@ -6,7 +6,7 @@
     <!--Columna 1-->
     <div class="container py-5">
         <div class="row">
-            <?php if ($data['verificar']['verify'] == 1) { ?>
+        <?php if (isset($data['verificar']['verify']) && $data['verificar']['verify'] == 1) { ?>
                 <div class="col-md-8">
                     <div class="card shadow-lg">
                         <div class="card-body">

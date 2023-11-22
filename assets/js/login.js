@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Registro de Usuarios
     registrarse.addEventListener('click', function() {
-        if (nombreRegistro.value == '' || correoRegistro == '' || claveRegistro.value == '') {
-            Swal.fire("Aviso?", 'TODOS LOS CAMPOS SON REQUERIDOS', 'warning');
+        if (nombreRegistro.value == '' || correoRegistro.value == '' || claveRegistro.value == '') {
+            Swal.fire("Aviso", 'TODOS LOS CAMPOS SON REQUERIDOS', 'warning');
             return;
         }
         let formData= new FormData();
@@ -38,11 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
-                Swal.fire("Aviso?", res.msg, res.icono);
+                Swal.fire("Aviso", res.msg, res.icono);
                 if (res.icono == 'success') {
                     setTimeout(() => {
                         enviarCorreo(correoRegistro.value, res.token);
                     }, 2000);
+
                 }
             }
 
@@ -64,7 +65,7 @@ function enviarCorreo(correo, token) {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
                 Swal.fire(
-                    'Aviso?',
+                    'Aviso',
                     res.msg,
                     res.icono
                 );
