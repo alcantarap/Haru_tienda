@@ -20,11 +20,14 @@ class ClientesModel extends Query
         return $res;
         
     }
+
+    //Funcion para verificar correo 
     public function getToken($token)
     {
-        $sql = "SELECT * FROM clientes WHERE token = '$token' ";
+        $sql = "SELECT * FROM clientes WHERE token = '$token'";
         return $this->select($sql);
     }
+    //Verificación
     public function actualizarVerify($id)
     {
         $sql = "UPDATE clientes SET token=?, verify=? WHERE id=?";
@@ -37,6 +40,7 @@ class ClientesModel extends Query
         }
         return $res;
     }
+    
     public function getVerificar($correo)
     {
         $sql = "SELECT * FROM clientes WHERE correo = '$correo'";

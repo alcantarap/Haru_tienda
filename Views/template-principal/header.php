@@ -4,22 +4,22 @@
 <head>
     <title><?php echo TITLE . ' - ' . $data['title']; ?></title>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo BASE_URL;?>assets/favicon/favicon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo BASE_URL;?>assets/favicon/favicon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo BASE_URL;?>assets/favicon/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASE_URL;?>assets/favicon/favicon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo BASE_URL;?>assets/favicon/favicon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo BASE_URL;?>assets/favicon/favicon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo BASE_URL;?>assets/favicon/favicon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo BASE_URL;?>assets/favicon/favicon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL;?>assets/favicon/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo BASE_URL;?>assets/favicon/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL;?>assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo BASE_URL;?>assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL;?>assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?php echo BASE_URL;?>assets/favicon/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo BASE_URL; ?>assets/favicon/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo BASE_URL; ?>assets/favicon/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo BASE_URL; ?>assets/favicon/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASE_URL; ?>assets/favicon/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo BASE_URL; ?>assets/favicon/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo BASE_URL; ?>assets/favicon/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo BASE_URL; ?>assets/favicon/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo BASE_URL; ?>assets/favicon/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL; ?>assets/favicon/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo BASE_URL; ?>assets/favicon/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL; ?>assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo BASE_URL; ?>assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL; ?>assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo BASE_URL; ?>assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?php echo BASE_URL;?>assets/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="<?php echo BASE_URL; ?>assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -45,9 +45,9 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-    <!--LOGO IMG-->
-    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/img/logo-letras3.png'; ?>" alt="logo" /></a>
-    <!--FIN LOGO IMG-->
+            <!--LOGO IMG-->
+            <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/img/logo-letras3.png'; ?>" alt="logo" /></a>
+            <!--FIN LOGO IMG-->
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -89,16 +89,24 @@
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark" id="btnCantidadCarrito">0</span>
                     </a>
                     <!--Deseo-->
-                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo/'?>">
+                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo/' ?>">
                         <i class="fas fa-fw fa-heart text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark" id="btnCantidadDeseo">0</span>
                     </a>
                     <!--Usuario-->
-                    <a class="nav-icon position-relative text-decoration-none" href="" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    <a class="nav-icon position-relative text-decoration-none" href="#" id="btnModalLogin">
                         <i class="fas fa-fw fa-user text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark"></span>
                     </a>
-                    
+                    <?php if (!empty($_SESSION['correoCliente'])) { ?>
+                        <a class="nav-icon position-relative text-decoration-none" href="#" id="btnModalLogin">
+                            <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/logo-transparente.png'?>" alt="LOGO CLIENTE" width="50">
+                        </a>
+                    <?php } else { ?>
+                        <a class="nav-icon position-relative text-decoration-none" href="#" id="btnModalLogin">
+                            <i class="fas fa-fw fa-user text-dark mr-1"></i>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
 
@@ -122,6 +130,3 @@
             </form>
         </div>
     </div>
-
-
-

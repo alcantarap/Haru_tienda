@@ -3,10 +3,18 @@ const frmLogin = document.querySelector('#frmLogin');
 const frmRegister = document.querySelector('#frmRegister');
 const btnLogin = document.querySelector('#btnLogin');
 const registrarse= document.querySelector('#registrarse');
+const login= document.querySelector('#login');
 
 const nombreRegistro= document.querySelector('#nombreRegistro');
 const claveRegistro= document.querySelector('#claveRegistro');
 const correoRegistro= document.querySelector('#correoRegistro');
+
+const correoLogin= document.querySelector('#correoLogin');
+const claveLogin= document.querySelector('#claveLogin');
+
+const btnModalLogin= document. querySelector('#btnModalLogin');
+
+const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'))
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,10 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Registro de Usuarios
     registrarse.addEventListener('click', function() {
-        if (nombreRegistro.value == '' || correoRegistro.value == '' || claveRegistro.value == '') {
+        if (nombreRegistro.value == "" ||
+            correoRegistro.value == "" ||
+            claveRegistro.value == ""
+        ) {
             Swal.fire("Aviso", 'TODOS LOS CAMPOS SON REQUERIDOS', 'warning');
-            return;
-        }
+        } else {
         let formData= new FormData();
         formData.append("nombre", nombreRegistro.value);
         formData.append("clave", claveRegistro.value);
@@ -48,7 +58,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
         }
+    }
     });
+
+    //Login
+    login.addEventListener('click', function() {
+        if (correoLogin.value == "" || claveLogin.value == "") {
+            Swal.fire("Aviso", 'TODOS LOS CAMPOS SON REQUERIDOS', 'warning');
+            return;
+        }
+        let formData= new FormData();
+        formData.append("correoLogin", correoLogin.value);
+        formData.append("claveLogin", claveLogin.value);
+        const url = base_url + "clientes/loginDirecto";
+        const http = new XMLHttpRequest();
+        http.open("POST", url, true);
+        http.send(formData);
+        http.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                const res = JSON.parse(this.responseText);
+                Swal.fire("Aviso", res.msg, res.icono);
+                if (res.icono == 'success') {
+                    window.location.reload();
+                }
+            }
+
+        }
+    });
+
+    //MODAL LOGIN
+    btnModalLogin.addEventListener('click', function() {
+        modalLogin.show();
+    })
 
 });
 
@@ -78,6 +119,11 @@ function enviarCorreo(correo, token) {
 
             };
             
+}
+
+function abrirModalLogin(){
+    myModal.hide();
+    modalLogin.show();
 }
 
 
