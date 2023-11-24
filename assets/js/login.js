@@ -12,9 +12,7 @@ const correoRegistro= document.querySelector('#correoRegistro');
 const correoLogin= document.querySelector('#correoLogin');
 const claveLogin= document.querySelector('#claveLogin');
 
-const btnModalLogin= document. querySelector('#btnModalLogin');
-
-const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'))
+const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -79,17 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 const res = JSON.parse(this.responseText);
                 Swal.fire("Aviso", res.msg, res.icono);
                 if (res.icono == 'success') {
+                    setTimeout(() =>{
                     window.location.reload();
+                }, 2000);
                 }
             }
 
         }
     });
 
-    //MODAL LOGIN
-    btnModalLogin.addEventListener('click', function() {
-        modalLogin.show();
-    })
 
 });
 
@@ -121,9 +117,10 @@ function enviarCorreo(correo, token) {
             
 }
 
-function abrirModalLogin(){
-    myModal.hide();
+function abrirModalLogin() {
+    myModal.toggle();
     modalLogin.show();
 }
+
 
 

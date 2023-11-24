@@ -159,13 +159,13 @@ function btnEliminarCarrito() {
 }
 
 function eliminarListaCarrito(idProducto) {
-    console.log(listaDeseo);
+    console.log(listaCarrito);
     for (let i = 0; i < listaCarrito.length; i++) {
         if (listaCarrito[i]['idProducto'] == idProducto) {
             listaCarrito.splice(i, 1);
         }
     }
-    localStorage.setItem('listaCarrito', JSON.stringify(listaDeseo));
+    localStorage.setItem('listaCarrito', JSON.stringify(listaCarrito));
     getListaCarrito();
     cantidadCarrito();
     Swal.fire(
