@@ -6,8 +6,8 @@ const PASS = "";
 const DB = "haru_tienda";
 const CHARSET = "charset=utf8";
 const TITLE = "Haru Store";
-const MONEDA = "CLP";
-const CLIENT_ID = "";
+const MONEDA = "USD";
+const CLIENT_ID = "AQzUzs9M9fp8ntDxgPLTJe2X37jUdygfdEsDcrw2OSM9uN_DZLRji01DrHN7aFr1ZEaho3sGwyWEfg8o";
 const USER_SMTP = "denisse.ap06@gmail.com";
 const PASS_SMTP= "wovs umdm bwnw tqqv"; /* Contraseña de aplicación "Haru-Tienda-PHP"*/
 const PUERTO_SMTP = 465;
