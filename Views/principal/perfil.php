@@ -94,18 +94,22 @@
                 <!-- Tu pedido (pendiente) -->
                 <div class="tab-pane fade" id="pendiente" role="tabpanel" aria-labelledby="pendientes-tab">
                     <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover" id="tblPendiente" style="width: 100;">
-                                <thead class="bg-dark text-white">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Monto</th>
-                                        <th>Fecha</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped table-hover" id="tblPendiente" style="width: 100;">
+                                        <thead class="bg-dark text-white">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Monto</th>
+                                                <th>Fecha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,6 +133,7 @@
     <?php include_once 'Views/template-principal/footer.php'; ?>
 
     <script src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
+    <script src="<?php echo BASE_URL; ?>assets/js/traduccion.js"></script>
     <script src="<?php echo BASE_URL . 'assets/js/clientes.js'; ?>"></script>
 
 </body>

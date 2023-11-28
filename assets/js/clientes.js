@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
             { data: 'monto' },
             { data: 'fecha' }
         ],
-        language
+        language,
+        dom,
+        buttons
     } );
 
 });
