@@ -6,7 +6,7 @@
     <!--Columna 1-->
     <div class="container py-5">
         <div class="row">
-        <?php if (isset($data['verificar']['verify']) && $data['verificar']['verify'] == 1) { ?>
+            <?php if (isset($data['verificar']['verify']) && $data['verificar']['verify'] == 1) { ?>
                 <div class="col-md-8">
                     <div class="card shadow-lg">
                         <div class="card-body">
@@ -24,7 +24,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+
                                     </tbody>
                                 </table>
                         </div>
@@ -38,38 +38,72 @@
                 <div class="col-md-4">
                     <div class="card shadow-lg">
                         <div class="card-body text-center">
-                            <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="170">
-                        <hr>
-                        <!-- Captura de Nombre y Correo en pantalla -->
-                        <p><?php echo $_SESSION['nombreCliente']; ?></p>
-                        <p><i class="fas fa-envelope"></i> <?php echo $_SESSION['correoCliente']; ?></p>
-                        
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Paypal
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div id="paypal-button-container"></div>
+                            <!-- Home - Profile - Contact -->
+                            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pago-tab" data-bs-toggle="tab" data-bs-target="#pago" type="button" role="tab" aria-controls="pago" aria-selected="true">Pago</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pendiente-tab" data-bs-toggle="tab" data-bs-target="#pendiente" type="button" role="tab" aria-controls="pendiente" aria-selected="false">Pendiente</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="completado-tab" data-bs-toggle="tab" data-bs-target="#completado" type="button" role="tab" aria-controls="completado" aria-selected="false">Completado</button>
+                                </li>
+                            </ul>
+                            <br>
+                            <!-- Pago -->
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="pago" role="tabpanel" aria-labelledby="pago-tab"> <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="170">
+                                    <hr>
+                                    <!-- Captura de Nombre y Correo en pantalla -->
+                                    <p><?php echo $_SESSION['nombreCliente']; ?></p>
+                                    <p><i class="fas fa-envelope"></i> <?php echo $_SESSION['correoCliente']; ?></p>
+
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Paypal
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div id="paypal-button-container"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Otros medios de Pago
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <strong>...</strong>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Otros medios de Pago
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                    </div>
+                                <!-- Tu pedido (pendiente) -->
+                                <div class="tab-pane fade" id="pendiente" role="tabpanel" aria-labelledby="pendientes-tab">
+                                    <table class="table table-bordered table-striped table-hover" id="tblPendiente">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Monto</th>
+                                                <th>Fecha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
                                 </div>
+                                <!-- Pedidos completados -->
+                                <div class="tab-pane fade" id="completado" role="tabpanel" aria-labelledby="completado-tab">...</div>
                             </div>
-                        </div>
+
                         </div>
                     </div>
                 </div>
@@ -89,7 +123,9 @@
 
     <?php include_once 'Views/template-principal/footer.php'; ?>
 
-    <script src="<?php echo BASE_URL . 'assets/js/clientes.js' ?>"></script>
+    <script src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
+
+    <script src="<?php echo BASE_URL . 'assets/js/clientes.js'; ?>"></script>
 
 </body>
 
