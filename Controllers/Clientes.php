@@ -133,4 +133,44 @@ class Clientes extends Controller
             die();
         }
     }
+    //registro pedido
+    public function registrarPedido()
+    {
+        $datos = file_get_contents('php://input');
+        $json = json_decode($datos, true);
+        $pedidos = $json['pedidos'];
+        $productos = $json['productos'];
+        if (is_array($pedidos) && is_array($productos)) {
+            $id_transaccion = $pedidos['id'];
+            $monto = $pedidos['purchase_units'][0]['amount']['value'];
+            $estado = $pedidos['status'];
+            $fecha = date('Y-m-d H:i:s');
+            $email = $pedidos['payer']['email_address'];
+            $nombre = $pedidos['payer']['name']['given_name'];
+            $apellido = $pedidos['payer']['name']['surname'];
+            $direccion = $pedidos['purchase_units'][0]['shipping']['address']['address_line_1'];
+            $comuna = $pedidos['purchase_units'][0]['shipping']['address']['admin_area_2'];
+            $email_user = $_SESSION['correoCliente'];
+            $data = $this->model->registrarPedido($id_transaccion, $monto, $estado, $fecha, $email, $nombre, $apellido, 
+                                        $direccion, $comuna, $email_user);
+            if ($data > 0) {
+                foreach ($productos as $producto) {
+                    $temp = $this->model->getProducto($producto['idProducto']);
+                    $this->model->registrarDetalle($temp['nombre'], $temp['precio'], $producto['cantidad'], $data);
+                }
+                $mensaje = array('msg' => 'Pedido registrado', 'icono' => 'success');
+            } else {
+                $mensaje = array('msg' => 'Error al registrar pedido', 'icono' => 'error');
+            }
+            
+        }else{
+            $mensaje = array('msg' => 'Error con los datos', 'icono' => 'error');
+        }
+        echo json_encode($mensaje);
+        die();
+    }
 }
+
+
+//sb-tzsq4328381933@personal.example.com
+//PU^u6$3+

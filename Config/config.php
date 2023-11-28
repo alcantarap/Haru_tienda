@@ -13,3 +13,7 @@ const PASS_SMTP= "wovs umdm bwnw tqqv"; /* Contraseña de aplicación "Haru-Tien
 const PUERTO_SMTP = 465;
 const HOST_SMTP = "smtp.gmail.com";
 ?>
+
+
+
+
