@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         columns: [
             { data: 'id_transaccion' },
             { data: 'monto' },
-            { data: 'fecha' },
-        ]
+            { data: 'fecha' }
+        ],
+        language
     } );
 
 });
