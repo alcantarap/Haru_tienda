@@ -14,7 +14,7 @@ const claveLogin= document.querySelector('#claveLogin');
 
 const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
 
-const imputBusqueda = document.querySelector('inputModalSearch');
+const inputBusqueda = document.querySelector('inputModalSearch');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -89,11 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //Busqueda de Productos
-    imputBusqueda.addEventListener('keyup', function (e){
+    inputBusqueda.addEventListener('keyup', function(e) {
         const url = base_url + "principal/busqueda/" + e.target.value;
         const http = new XMLHttpRequest();
         http.open("GET", url, true);
-        http.send(formData);
+        http.send();
         http.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 const res = JSON.parse(this.responseText);
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 res.forEach(producto => {
                     html += `<div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="${ base_url + 'principal/detail/' + $producto.id }">
+                        <a href="${ base_url + 'principal/detail/' + producto.id }">
                             <img src="${ producto.imagen }" class="card-img-top" alt="${ producto.nombre }">
                         </a>
                         <div class="card-body">

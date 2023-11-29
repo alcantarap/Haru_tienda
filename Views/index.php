@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="row">
-                <?php foreach ($data['nuevosproductos'] as $producto){?>
+                <?php foreach ($data['nuevosproductos'] as $producto){ ?>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="<?php echo BASE_URL . 'principal/detail/' . $producto['id']; ?>">
