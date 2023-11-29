@@ -103,11 +103,11 @@ function registrarPedido(datos) {
 }
 
 function verPedido(idPedido) {
-    const mPedido = new bootstrap.Modal(document.getElementById('modalPedido'))
-    const url = base_url + 'clientes/verPedido' + idPedido;
+    const mPedido = new bootstrap.Modal(document.getElementById('modalPedido'));
+    const url = base_url + 'clientes/verPedido/' + idPedido;
     const http = new XMLHttpRequest();
     http.open('GET', url, true);
-    http.send(JSON.stringify(listaCarrito));
+    http.send();
     http.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200) {
             const res = JSON.parse(this.responseText);

@@ -166,6 +166,7 @@
                                 <h2 class="h5 mt-4 text-center">Completado</h2>
                             </div>
                         </div>
+                    
                         <div class="col-md-12">
                             <div class="table-responsive">
                                 <table class="table table-borderer table-striped table-haver align-middle" id="tablePedidos" style="width: 100%;">
