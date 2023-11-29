@@ -97,12 +97,13 @@
                         <div class="card shadow-lg">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover" id="tblPendiente" style="width: 100;">
+                                    <table class="table table-bordered table-striped table-hover" id="tblPendiente" style="width: 100%;">
                                         <thead class="bg-dark text-white">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Monto</th>
                                                 <th>Fecha</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -130,9 +131,67 @@
     </div>
     <!-- End perfil -->
 
+    <div id="modalPedido" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Estado de pedido</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-md-6 col-lg-4 pb-5">
+                            <div class="h-100 py-5 services-icon-wap shadow">
+                                <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
+                                <h2 class="h5 mt-4 text-center">Enviado</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 pb-5">
+                            <div class="h-100 py-5 services-icon-wap shadow">
+                                <div class="h1 text-success text-center"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-credit-card-fill" viewBox="0 0 16 16">
+                                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z" />
+                                    </svg></div>
+                                <h2 class="h5 mt-4 text-center">Proceso</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 pb-5">
+                            <div class="h-100 py-5 services-icon-wap shadow">
+                                <div class="h1 text-success text-center"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                    </svg></div>
+                                <h2 class="h5 mt-4 text-center">Completado</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-borderer table-striped table-haver align-middle" id="tablePedidos" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th>SubTotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php include_once 'Views/template-principal/footer.php'; ?>
 
-    <script src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/traduccion.js"></script>
     <script src="<?php echo BASE_URL . 'assets/js/clientes.js'; ?>"></script>
 

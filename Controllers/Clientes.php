@@ -171,8 +171,19 @@ class Clientes extends Controller
     }
 
     //listar productos pendientes
-    public function listarPendientes(){
+    public function listarPendientes()
+    {
         $data = $this->model->getPedidos(1);
+        for ($i=0; $i < count($data); $i++) { 
+            $data[$i]['accion'] = '<div class="text-center"><button class="btn btn-primary" type="button" onclick="verPedido('.$data[$i]['id'].')"><i class="fas fa-eye"></i></button></div>';
+        }
+        echo json_encode($data);
+        die();
+    }
+
+    public function verPedido($idPedido) 
+    {
+        $data = $this->model->verPedido($idPedido);
         echo json_encode($data);
         die();
     }
@@ -180,4 +191,4 @@ class Clientes extends Controller
 
 
 //sb-tzsq4328381933@personal.example.com
-//PU^u6$3+
+//
