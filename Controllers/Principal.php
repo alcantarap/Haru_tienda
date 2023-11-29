@@ -6,18 +6,18 @@ class Principal extends Controller
         parent::__construct();
         session_start();
     }
-    public function index()
-    {
-    }
+
     //Vista Nosotros "Quienes somos"
     public function nosotros()
     {
+        $data['perfil'] = 'no';
         $data['title'] = 'Quienes somos';
         $this->views->getView('principal', "nosotros", $data);
     }
     //Vista Tienda
     public function tienda($page)
     {
+        $data['perfil'] = 'no';
         $pagina = (empty($page)) ? 1 : $page;
         $porPagina = 9;
         $desde = ($pagina - 1) * $porPagina;
@@ -31,6 +31,7 @@ class Principal extends Controller
     //Vista detalle
     public function detail($id_producto)
     {
+        $data['perfil'] = 'no';
         $data['producto'] = $this->model->getProducto($id_producto);
         $id_categoria = $data['producto']['id_categoria'];
         $data['relacionados'] = $this->model->getAleatorios($id_categoria , $data['producto']['id']);
@@ -40,6 +41,7 @@ class Principal extends Controller
     //Vista categoria
     public function categorias($datos)
     {
+        $data['perfil'] = 'no';
         $id_categoria =1;
         $page = 1;
         $array = explode(',' ,$datos);
@@ -66,9 +68,11 @@ class Principal extends Controller
         $data['id_categoria'] = $id_categoria;
         $this->views->getView('principal', "categorias", $data);
     }
+
     //Vista lista deseos
     public function deseo()
     {
+        $data['perfil'] = 'no';
         $data['title'] = 'Lista de deseo';
         $this->views->getView('principal', "deseo", $data);
     }
@@ -97,6 +101,14 @@ class Principal extends Controller
         $array['totalPaypal'] = number_format($total, 2, '.', '');
         $array['moneda'] = MONEDA;
         echo json_encode($array, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    //Busqueda
+    public function busqueda($valor)
+    {
+        $data = $this->model->getBusqueda($valor);
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
         die();
     }
     //Vista adoptame

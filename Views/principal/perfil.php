@@ -53,6 +53,14 @@
 
                         <div class="col-md-4">
                             <div class="card shadow-lg">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle float-end" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-user"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="<?php echo BASE_URL . 'clientes/salir'; ?>"><i class="fas fa-times-circle"></i>Cerrar Sesión</a></li>
+                                    </ul>
+                                </div>
                                 <div class="card-body text-center">
                                     <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="170">
                                     <hr>
@@ -166,7 +174,7 @@
                                 <h2 class="h5 mt-4 text-center">Completado</h2>
                             </div>
                         </div>
-                    
+
                         <div class="col-md-12">
                             <div class="table-responsive">
                                 <table class="table table-borderer table-striped table-haver align-middle" id="tablePedidos" style="width: 100%;">

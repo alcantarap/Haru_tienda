@@ -87,16 +87,19 @@
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fas fa-fw fa-search text-dark mr-2"></i>
                     </a>
+
                     <!--Carrito-->
-                    <a class="nav-icon position-relative text-decoration-none" href="#" id="verCarrito">
+                    <a class="nav-icon position-relative text-decoration-none <?php echo (isset($data['perfil'])) == 'no' ? '' : 'd-none'; ?>" href="#" id="verCarrito">
                         <i class="fas fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark" id="btnCantidadCarrito">0</span>
                     </a>
                     <!--Deseo-->
-                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo/' ?>">
+                    <a class="nav-icon position-relative text-decoration-none <?php echo (isset($data['perfil'])) == 'no' ? '' : 'd-none'; ?>" href="<?php echo BASE_URL . 'principal/deseo/' ?>">
                         <i class="fas fa-fw fa-heart text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-dark" id="btnCantidadDeseo">0</span>
                     </a>
+
+
                     <!--Usuario-->
                     <?php if (!empty($_SESSION['correoCliente'])) { ?>
                         <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'clientes'?>">

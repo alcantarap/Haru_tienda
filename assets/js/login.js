@@ -14,6 +14,8 @@ const claveLogin= document.querySelector('#claveLogin');
 
 const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
 
+const imputBusqueda = document.querySelector('inputModalSearch');
+
 
 document.addEventListener('DOMContentLoaded', function() {
     btnRegister.addEventListener('click', function() {
@@ -86,6 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    //Busqueda de Productos
+    imputBusqueda.addEventListener('keyup', function (e){
+        const url = base_url + "principal/busqueda/" + e.target.value;
+        const http = new XMLHttpRequest();
+        http.open("GET", url, true);
+        http.send(formData);
+        http.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(yhis.responseText);
+                //const res = JSON.parse(this.responseText);
+            }
+        };
+    })
 
 });
 
