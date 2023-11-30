@@ -56,6 +56,7 @@
                     </div>
                     </div>
                 </div>
+            
                 <div class="col">
                     <div class="card">
                     <img src="<?php echo BASE_URL . 'assets/images/frutillas.png'; ?>" class="card-img-top" alt="...">
