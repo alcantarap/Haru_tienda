@@ -49,7 +49,7 @@
             <div class="modal-body m-3">
                 <form method="get" action="">
                     <div class="text-center">
-                        <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="200">
+                        <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/images/logo_completo.png'; ?>" alt="Logo" width="200">
                     </div>
                     <div class="row">
                         <div class="cold-12-md" id="frmLogin">

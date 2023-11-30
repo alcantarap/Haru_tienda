@@ -50,7 +50,7 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <!--LOGO IMG-->
-            <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/img/logo-letras3.png'; ?>" alt="logo" /></a>
+            <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL . 'assets/images/logo-letras3.png'; ?>" alt="logo" /></a>
             <!--FIN LOGO IMG-->
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

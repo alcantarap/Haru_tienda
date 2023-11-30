@@ -13,12 +13,12 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Haru Store">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/images/logo_completo.png'; ?>" alt="Haru Store">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
                                 <p>
-                                    <a href="<?php echo BASE_URL .'principal/nostros'; ?>"><img src="<?php echo BASE_URL . 'assets/img/titulo_bienvenidos.png'; ?>" alt="tienda" /></a> <br>
+                                    <a href="<?php echo BASE_URL .'principal/nostros'; ?>"><img src="<?php echo BASE_URL . 'assets/images/titulo_bienvenidos.png'; ?>" alt="tienda" /></a> <br>
                                     A Haru Store, te estamos esperando. <br> Encuentra aquí un espacio seguro para comprar productos exclusivos de mascotas y de alta calidad para entregarles la mejor vida posible, un espacio de adopción conectando con una hermosa comunidad petlovers, además de tips y cuidados generales para ofrecer el mejor el estilo de vida.
                                 </p>
                             </div>
@@ -31,12 +31,12 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/img/tienda.png'; ?>" alt="Tienda">
+                            <img class="img-fluid" src="<?php echo BASE_URL . 'assets/images/tienda.png'; ?>" alt="Tienda">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
                                 <p>
-                                    <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/img/titulo_petshop.png'; ?>" alt="tienda" /></a> <br>
+                                    <a href="<?php echo BASE_URL .'principal/tienda'; ?>"><img src="<?php echo BASE_URL . 'assets/images/titulo_petshop.png'; ?>" alt="tienda" /></a> <br>
                                     Encuentra aquí miles de productos exclusivos de mascotas y de alta calidad para entregarles la mejor vida posible.<br> Descubre los productos que tenemos para nuestros perritos y gatitos.
                                 </p>
                             </div>
@@ -54,7 +54,7 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
                                 <p>
-                                    <a href="<?php echo BASE_URL .'principal/adoptame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/titulo_adoptame.png'; ?>" alt="adopcion" /></a> <br>
+                                    <a href="<?php echo BASE_URL .'principal/adoptame'; ?>"><img src="<?php echo BASE_URL . 'assets/images/titulo_adoptame.png'; ?>" alt="adopcion" /></a> <br>
                                     Conoce al nuevo miembro de tu familia y cambia realidades llenandolas de amor.<br>
                                     Todos los días nacen perritos y gatitos en busca de un hogar, llenemos de amor este espacio buscando nuevos hogares.
                                 </p>
@@ -73,7 +73,7 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
                                 <p>
-                                <a href="<?php echo BASE_URL .'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/img/titulo_cuidame.png'; ?>" alt="cuidame" /></a> <br>
+                                <a href="<?php echo BASE_URL .'principal/cuidame'; ?>"><img src="<?php echo BASE_URL . 'assets/images/titulo_cuidame.png'; ?>" alt="cuidame" /></a> <br>
                                     Entregar un buen cuidado es clave para el bienestar de nuestras mascotas, encuentra una guía aquí en Haru Store para ofrecerle la mejor vida a nuestros perritos y gatitos.
                                 </p>
                             </div>
@@ -105,7 +105,7 @@
         <div class="row">
             <?php foreach ($data['categorias'] as $categoria){?>
             <div class="col-12 col-md-2 p-5 mt-3">
-                <a href="<?php echo BASE_URL . 'principal/categorias/' . $categoria['id']; ?>"><img src="./assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="<?php echo BASE_URL . 'principal/categorias/' . $categoria['id']; ?>"><img src="./assets/images/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3"><?php echo $categoria['categoria'];?></h5>
             </div>
             <?php }?>

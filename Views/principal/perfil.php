@@ -62,7 +62,7 @@
                                     </ul>
                                 </div>
                                 <div class="card-body text-center">
-                                    <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/logo_completo.png'; ?>" alt="Logo" width="170">
+                                    <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/images/logo_completo.png'; ?>" alt="Logo" width="170">
                                     <hr>
                                     <!-- Captura de Nombre y Correo en pantalla -->
                                     <p><?php echo $_SESSION['nombreCliente']; ?></p>
