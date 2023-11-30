@@ -22,7 +22,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/manzanas.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/manzanas.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Manzanas</h5>
                         <p class="card-text">Son ricas en vitaminas A, C y K, necesarias para numerosos procesos corporales. Posee propiedades antioxidantes que ayudan a prevenir y a ralentizar problemas de salud como el cáncer o el envejecimiento cerebral canino.</p>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/apio.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/apio.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Apio</h5>
                         <p class="card-text">Esta verdura es muy beneficiosa para los perros; eso sí, en cantidades limitadas, bien troceada y lavada. Es un gran antioxidante natural y es vital para mantener la salud de nuestro perro en buenas condiciones. El apio es digestivo, fortalece el sistema inmune, es antiinflamatorio y diurético.</p>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/brocoli.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/brocoli.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Brócoli</h5>
                         <p class="card-text">Brócoli. Esta verdura es excelente para el organismo de los perros gracias a su alto contenido de vitaminas A, C, E y K. Tiene propiedades cicatrizantes, fortalece los huesos, la visión y los dientes del animal.</p>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/frambuesas.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/frambuesas.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Frambuesas</h5>
                         <p class="card-text">Es la mejor opción en cuanto a propiedades y deberían añadirse a la ración de comida diaria de los perros. Las frambuesas tienen alto contenido en antioxidantes y se recomienda una ración de 2 a 6 frambuesas de acuerdo al tamaño de tu mascota.</p>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/frutillas.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/frutillas.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Frutillas</h5>
                         <p class="card-text">Es la mejor opción en cuanto a propiedades y deberían añadirse a la ración de comida diaria de los perros. Las frambuesas tienen alto contenido en antioxidantes.</p>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/zanahorias.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/zanahorias.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Zanahorias</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/lechuga.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/lechuga.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Lechuga</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="<?php echo BASE_URL . 'assets/img/platano.png'; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo BASE_URL . 'assets/images/platano.png'; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Platanos</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

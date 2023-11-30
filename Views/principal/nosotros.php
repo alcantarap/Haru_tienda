@@ -105,7 +105,7 @@
                     <div class="h1 text-success text-center"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-credit-card-fill" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
                     </svg></div>
-                    <h2 class="h5 mt-4 text-center">Pago por Transbank</h2>
+                    <h2 class="h5 mt-4 text-center">Pago por PayPal</h2>
                 </div>
             </div>
 
