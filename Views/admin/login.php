@@ -1,3 +1,5 @@
+<!--?php echo password_hash('admin', PASSWORD_DEFAULT); exit;?>-->
+
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +22,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="<?php echo BASE_URL;?>assets/css/app.css" rel="stylesheet">
 	<link href="<?php echo BASE_URL;?>assets/css/icons.css" rel="stylesheet">
-	<title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
+	<title><?php echo $data['title'];?></title>
 </head>
 
 <body class="">
@@ -47,34 +49,34 @@
 								<div class="">
 									<div class="mb-3 text-center">
 										<img src="<?php echo BASE_URL;?>assets
-                                /images/logo-icon.png" width="60" alt="">
+                                /images/logo_completo.png" width="260" alt="">
 									</div>
 									<div class="text-center mb-4">
-										<h5 class="">Rocker Admin</h5>
-										<p class="mb-0">Please log in to your account</p>
+										<h5 class="">HaruStore Admin</h5>
+										<p class="mb-0">Porfavor inicia sesión</p>
 									</div>
 									<div class="form-body">
-										<form class="row g-3">
+										<form class="row g-3" id="formulario">
 											<div class="col-12">
-												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+												<label for="email" class="form-label">Correo electrónico</label>
+												<input type="email" class="form-control" id="email" name="email" value="admin_haru@gmail.com" placeholder="jhon@example.com">
 											</div>
 											<div class="col-12">
-												<label for="inputChoosePassword" class="form-label">Password</label>
+												<label for="clave" class="form-label">Contraseña</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<input type="password" class="form-control border-end-0" id="clave" name="clave" value="12345678" placeholder="Contraseña"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 												</div>
 											</div>
-											<div class="col-md-12 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
+											<div class="col-md-12 text-end">	<a href="authentication-forgot-password.html">Olvidaste la contraseña?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-primary">Sign in</button>
+													<button type="submit" class="btn btn-primary">Iniciar sesión</button>
 												</div>
 											</div>
 											<div class="col-12">
 												<div class="text-center ">
-													<p class="mb-0">Don't have an account yet? <a href="authentication-signup.html">Sign up here</a>
+													<p class="mb-0">No tienes una cuenta? <a href="authentication-signup.html">Registrate aqui</a>
 													</p>
 												</div>
 											</div>
@@ -117,6 +119,11 @@
 	</script>
 	<!--app JS-->
 	<script src="<?php echo BASE_URL;?>assets/js/app.js"></script>
+	<script>
+		const BASE_URL = '<?php echo BASE_URL;?>';
+	</script>
+	<script src="<?php echo BASE_URL;?>assets/js/modulos/login.js"></script>
+	<script src="<?php echo BASE_URL;?>assets/js/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
