@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/dark-theme.css" />
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/semi-dark.css" />
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/header-colors.css" />
-    <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL . 'assets/DataTables/datatables.min.css'; ?>">
+    <title><?php echo TITLE . ' - ' . $data['title']; ?></title>
 </head>
 
 <body>
@@ -46,23 +47,14 @@
             <!--navigation-->
             <ul class="metismenu" id="menu">
                 <li>
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="<?php echo BASE_URL . 'admin/home';?>">
                         <div class="parent-icon"><i class='bx bx-home-alt'></i>
                         </div>
                         <div class="menu-title">Dashboard</div>
                     </a>
-                    <ul>
-                        <li> <a href="index.html"><i class='bx bx-radio-circle'></i>Default</a>
-                        </li>
-                        <li> <a href="index2.html"><i class='bx bx-radio-circle'></i>Alternate</a>
-                        </li>
-                        <li> <a href="index3.html"><i class='bx bx-radio-circle'></i>Graphical</a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="menu-label">UI Elements</li>
                 <li>
-                    <a href="widgets.html">
+                    <a href="<?php echo BASE_URL . 'usuarios';?>">
                         <div class="menu-title"><i class='fas fa-user'></i>Usuarios</div>
                     </a>
                 </li>
