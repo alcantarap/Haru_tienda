@@ -7,23 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (email.value == '' || clave.value == '') {
            alertas('todo los campos son requeridos', 'warning');
         } else {
-        let data = new FormData(this);
-        const url = BASE_URL + "admin/validar";
-        const http = new XMLHttpRequest();
-        http.open('POST', url, true);
-        http.send(data);
-        http.onreadystatechange = function(){
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
-                const res = JSON.parse(this.responseText);
-                if (res.icono == 'success') {
-                    setTimeout(() => {
-                        window.location = BASE_URL + 'admin/home';
-                    }, 2000);
+            let data = new FormData(this);
+            const url = BASE_URL + "admin/validar";
+            const http = new XMLHttpRequest();
+            http.open('POST', url, true);
+            http.send(data);
+            http.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    const res = JSON.parse(this.responseText);
+                    if (res.icono == 'success') {
+                        setTimeout(() => {
+                            window.location = BASE_URL + 'admin/home';
+                        }, 2000);
+                    }
+                    alertas(res.msg, res.icono);
                 }
-                alertas(res.msg, res.icono);
             }
-        }
         }
     });
 });
@@ -33,5 +33,5 @@ function alertas(msg, icono) {
         'Aviso?',
         msg.toUpperCase(),
         icono
-        )
+        );
 }

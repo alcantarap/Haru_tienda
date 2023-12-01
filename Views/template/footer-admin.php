@@ -171,7 +171,7 @@
 <script src="<?php echo BASE_URL; ?>assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="<?php echo BASE_URL; ?>assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
 <script src="<?php echo BASE_URL; ?>assets/plugins/chartjs/js/chart.js"></script>
-<script src="<?php echo BASE_URL; ?>assets/js/index.js"></script>
+<!--<script src="<?php echo BASE_URL; ?>assets/js/index.js"></script>-->
 <!--app JS-->
 <script src="<?php echo BASE_URL; ?>assets/js/app.js"></script>
 <script>
@@ -183,3 +183,5 @@
 <script>
     const base_url = '<?php echo BASE_URL; ?>';
 </script>
+<script type="text/javascript" src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/traduccion.js"></script>
