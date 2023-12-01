@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php';
+<?php include_once 'Views/template/header-principal.php';
 
 ?>
 
@@ -41,7 +41,7 @@
     </div>
     <!-- End Content -->
 
-    <?php include_once 'Views/template-principal/footer.php'; ?>
+    <?php include_once 'Views/template/footer-principal.php'; ?>
 
     <script src="<?php echo BASE_URL . 'assets/js/modulos/listaDeseo.js'?>"></script>
 

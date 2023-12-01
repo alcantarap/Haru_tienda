@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
 
 <!-- Mensaje de contenido página -->
 <div class="container-fluid bg-light py-5">
@@ -112,4 +112,4 @@
   </ul>
 </nav>
 
-<?php include_once 'Views/template-principal/footer.php'; ?>
+<?php include_once 'Views/templatel/footer-principal.php'; ?>
