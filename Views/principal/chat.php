@@ -1,4 +1,7 @@
-
+<?php
+//session_start();
+if(isset($_SESSION["usuario"]) && isset($_SESSION["celular"])){
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,28 +16,30 @@
 <body>
     <h1>Chat de Haru Store</h1>
     <div class="chat">
-        <h2>Bienvenido <span>usuario</span></h2>
+        <h2>Bienvenido <span><?php echo $_SESSION["usuario"]; ?></span></h2>
         <div class="msg">
-            <p>
-                <span>Usuario:</span>
-                Mensaje..............
-            </p>
-            <p class="sender">
-                <span>Usuario:</span>
-                Mensaje..............
-            </p>
+
         </div>
         <div class="input_msg">
             <input type="text" placeholder="Escribe un mensaje...">
-            <button>Enviar</button>
+            <button onclick="update()">Enviar</button>
+
             <div class="d-grid gap-2 col-6 mx-auto">
                 <a href="<?php echo BASE_URL . 'principal/login_chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
             </div>
+
         </div>
     </div>
 
 </body>
-
+<script src="<?php echo BASE_URL . 'assets/js/chat.js'; ?>"></script>
 </html>
 
 <?php
+}else{
+
+    header("location: " . BASE_URL . "principal/login_chat");
+    exit();
+
+}
+?>
