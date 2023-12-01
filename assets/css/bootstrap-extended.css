@@ -78,6 +78,10 @@ a {
 	color: #fd3550
 }
 
+.input-group-text {
+	background-color: #ffffff;
+}
+
 .btn {
     letter-spacing: .5px;
 }
@@ -348,11 +352,6 @@ a {
 	color: rgba(255, 255, 255, .5)!important
 }
 
-.topbar .dropdown-menu {
-	position: absolute;
-    top: 100%;
-    right: 0;
-}
 
 
 .bg-primary {
@@ -368,10 +367,7 @@ a {
   }
 
 
-
-
-
-  .form-check-success .form-check-input:checked {
+.form-check-success .form-check-input:checked {
 	background-color: #15ca20;
 	border-color: #15ca20
 }
