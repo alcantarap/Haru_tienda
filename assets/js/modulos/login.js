@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         http.send(data);
         http.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseTextw);
+                console.log(this.responseText);
                 const res = JSON.parse(this.responseText);
                 if (res.icono == 'success') {
                     setTimeout(() => {
-                        window.location = base_url + 'admin/home';
+                        window.location = BASE_URL + 'admin/home';
                     }, 2000);
                 }
                 alertas(res.msg, res.icono);

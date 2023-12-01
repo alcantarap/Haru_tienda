@@ -64,7 +64,7 @@
 											<div class="col-12">
 												<label for="clave" class="form-label">Contraseña</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="clave" name="clave" value="12345678" placeholder="Contraseña"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<input type="password" class="form-control border-end-0" id="clave" name="clave" value="admin" placeholder="Contraseña"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 												</div>
 											</div>
 											<div class="col-md-12 text-end">	<a href="authentication-forgot-password.html">Olvidaste la contraseña?</a>
