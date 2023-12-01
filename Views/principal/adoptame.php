@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
 
     <!-- Modal -->
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -129,7 +129,7 @@
                     
 
 
-        <?php include_once 'Views/template-principal/footer.php'; ?>
+        <?php include_once 'Views/template/footer-principal.php'; ?>
    
 </body>
 </html>
