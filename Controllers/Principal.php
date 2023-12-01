@@ -34,7 +34,7 @@ class Principal extends Controller
         $data['perfil'] = 'no';
         $data['producto'] = $this->model->getProducto($id_producto);
         $id_categoria = $data['producto']['id_categoria'];
-        $data['relacionados'] = $this->model->getAleatorios($id_categoria , $data['producto']['id']);
+        $data['relacionados'] = $this->model->getAleatorios($id_categoria, $data['producto']['id']);
         $data['title'] = $data['producto']['nombre'];
         $this->views->getView('principal', "detail", $data);
     }
@@ -42,16 +42,16 @@ class Principal extends Controller
     public function categorias($datos)
     {
         $data['perfil'] = 'no';
-        $id_categoria =1;
+        $id_categoria = 1;
         $page = 1;
-        $array = explode(',' ,$datos);
+        $array = explode(',', $datos);
         if (isset($array[0])) {
-            if(!empty($array[0])) {
+            if (!empty($array[0])) {
                 $id_categoria = $array[0];
             }
         }
         if (isset($array[1])) {
-            if(!empty($array[1])) {
+            if (!empty($array[1])) {
                 $page = $array[1];
             }
         }
@@ -97,7 +97,7 @@ class Principal extends Controller
                 $total += $subTotal;
             }
         }
-        $array['total'] = number_format($total , 2);
+        $array['total'] = number_format($total, 2);
         $array['totalPaypal'] = number_format($total, 2, '.', '');
         $array['moneda'] = MONEDA;
         echo json_encode($array, JSON_UNESCAPED_UNICODE);
@@ -135,5 +135,18 @@ class Principal extends Controller
     {
         $data['title'] = 'adopción';
         $this->views->getView('principal', "publicaciones_adop", $data);
+    }
+    //Vista CHAT
+    public function chat()
+    {
+        $data['title'] = 'CHAT';
+        $this->views->getView('principal', "chat", $data);
+    }
+
+    //Vista CHAT
+    public function login_chat()
+    {
+        $data['title'] = 'CHAT';
+        $this->views->getView('principal', "login_chat", $data);
     }
 }
