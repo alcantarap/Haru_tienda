@@ -1,6 +1,6 @@
 const frm = document.querySelector('#frmRegistro');
 const btnAccion = document.querySelector('#btnAccion');
-let tblCattblProductosegorias;
+let tblProductos;
 
 var firstTabEl = document.querySelector('#myTab li:last-child button')
 var firstTab = new bootstrap.Tab(firstTabEl)
