@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <!--boton para ir a chat de adopcion-->
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a href="<?php echo BASE_URL . 'principal/chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
+                                <a href="<?php echo BASE_URL . 'principal/login_chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
                             </div>
                             <p class="card-text">
                             <h5 class="card-title">Nombre Mascota: </h5> Rubio y Castaño
@@ -40,7 +40,7 @@
                         <div class="card-body">
                             <!--boton para ir a chat de adopcion-->
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a href="<?php echo BASE_URL . 'principal/chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
+                                <a href="<?php echo BASE_URL . 'principal/login_chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
                             </div>
                             <p class="card-text">
                             <h5 class="card-title">Nombre Mascota: </h5> No tienen nombre
@@ -66,7 +66,7 @@
                         <div class="card-body">
                             <!--boton para ir a chat de adopcion-->
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a href="<?php echo BASE_URL . 'principal/publicaciones_adop'; ?>" class="btn btn-dark" type="button">Adoptame</a>
+                                <a href="<?php echo BASE_URL . 'principal/login_chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
                             </div>
                             <p class="card-text">
                             <h5 class="card-title">Nombre Mascota: </h5> Mocka
@@ -92,7 +92,7 @@
                         <div class="card-body">
                             <!--boton para ir a chat de adopcion-->
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a href="<?php echo BASE_URL . 'principal/publicaciones_adop'; ?>" class="btn btn-dark" type="button">Adoptame</a>
+                                <a href="<?php echo BASE_URL . 'principal/login_chat'; ?>" class="btn btn-dark" type="button">Adoptame</a>
                             </div>
                             <p class="card-text">
                             <h5 class="card-title">Nombre Mascota: </h5> Calcetín
