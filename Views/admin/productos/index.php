@@ -33,10 +33,10 @@
     </div>
     <div class="tab-pane fade" id="nuevoProducto" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body p-5">
                 <form id="frmRegistro">
                     <div class="row">
-                        <input type="hidden" id="id" name="id">
+                        <input type="text" id="id" name="id">
                         <input type="text" id="imagen_actual" name="imagen_actual">
                         <div class="col-md-5">
                             <div class="form-group mb-2">
@@ -73,16 +73,15 @@
                                 <textarea id="descripcion" class="form-control" name="descripcion" rows="3" placeholder="Descripcion"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="imagen">imagen(opcional)</label>
-                                <input id="imagen" class="form-control-file" type="file" name="imagen">
+                                <label for="imagen">imagen</label>
+                                <input id="imagen" class="form-control" type="file" name="imagen">
                             </div>
                         </div>
                     </div>
                     <div class="text-end">
                         <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
-                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
