@@ -39,7 +39,7 @@
                     <img src="<?php echo BASE_URL;?>assets/images/logo_completo.png" class="logo-icon" alt="logo icon">
                 </div>
                 <div>
-                    <h4 class="logo-text">Admin</h4>
+                    <h4 class="logo-text"><?php echo TITLE;?></h4>
                 </div>
                 <div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i>
                 </div>
@@ -65,7 +65,12 @@
                 </li>
                 <li>
                     <a href="<?php echo BASE_URL . 'productos';?>">
-                        <div class="menu-title"><i class='fas fa-tags'></i>Productos</div>
+                        <div class="menu-title"><i class='fas fa-list'></i>Productos</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo BASE_URL . 'pedidos';?>">
+                        <div class="menu-title"><i class='fas fa-bell'></i>Pedidos</div>
                     </a>
                 </li>
             </ul>
@@ -476,7 +481,7 @@
                                     <a href="javascript:;">
                                         <div class="msg-header">
                                             <p class="msg-header-title">My Cart</p>
-                                            <p class="msg-header-badge">10 Items</p>
+                                            <p class="msg-header-badge"></p>
                                         </div>
                                     </a>
                                     <div class="header-message-list">
@@ -488,11 +493,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h6 class="cart-product-title mb-0">Men White T-Shirt</h6>
-                                                    <p class="cart-product-price mb-0">1 X $29.00</p>
+                                                    <h6 class="cart-product-title mb-0"></h6>
+                                                    <p class="cart-product-price mb-0"></p>
                                                 </div>
                                                 <div class="">
-                                                    <p class="cart-price mb-0">$250</p>
+                                                    <p class="cart-price mb-0"></p>
                                                 </div>
                                                 <div class="cart-product-cancel"><i class="bx bx-x"></i>
                                                 </div>
@@ -506,11 +511,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h6 class="cart-product-title mb-0">Men White T-Shirt</h6>
-                                                    <p class="cart-product-price mb-0">1 X $29.00</p>
+                                                    <h6 class="cart-product-title mb-0"></h6>
+                                                    <p class="cart-product-price mb-0"></p>
                                                 </div>
                                                 <div class="">
-                                                    <p class="cart-price mb-0">$250</p>
+                                                    <p class="cart-price mb-0"></p>
                                                 </div>
                                                 <div class="cart-product-cancel"><i class="bx bx-x"></i>
                                                 </div>
@@ -524,8 +529,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h6 class="cart-product-title mb-0">Men White T-Shirt</h6>
-                                                    <p class="cart-product-price mb-0">1 X $29.00</p>
+                                                    <h6 class="cart-product-title mb-0"></h6>
+                                                    <p class="cart-product-price mb-0"></p>
                                                 </div>
                                                 <div class="">
                                                     <p class="cart-price mb-0">$250</p>
@@ -658,27 +663,16 @@
                     </div>
                     <div class="user-box dropdown px-3">
                         <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="<?php echo BASE_URL; ?>assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
+                            <img src="<?php echo BASE_URL; ?>assets/images/logo_completo.png" class="user-img" alt="user avatar">
                             <div class="user-info">
-                                <p class="user-name mb-0">Pauline Seitz</p>
-                                <p class="designattion mb-0">Web Designer</p>
+                                <p class="user-name mb-0"><?php echo $_SESSION['nombre_usuario'];?></p>
+                                <p class="designattion mb-0"><?php echo $_SESSION['email'];?></p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-user fs-5"></i><span>Profile</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-cog fs-5"></i><span>Settings</span></a>
-                            </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-home-circle fs-5"></i><span>Dashboard</span></a>
-                            </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-dollar-circle fs-5"></i><span>Earnings</span></a>
-                            </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-download fs-5"></i><span>Downloads</span></a>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider mb-0"></div>
-                            </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i class="bx bx-log-out-circle"></i><span>Logout</span></a>
+                            <li><a class="dropdown-item d-flex align-items-center" href="<?php echo BASE_URL . 'admin/salir' ?>"><i class="bx bx-log-out-circle"></i><span>Logout</span></a>
                             </li>
                         </ul>
                     </div>
