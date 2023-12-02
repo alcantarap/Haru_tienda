@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover" style="width: 100%;" id= "tblUsuarios">
+            <table class="table table-bordered table-striped table-hover" style="width: 100%;" id="tblUsuarios">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -11,6 +11,7 @@
                         <th>Apellidos</th>
                         <th>Correo</th>
                         <th>Foto</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,7 @@
             </div>
             <form id="frmRegistro">
                 <div class="modal-body">
+                    <input type="hidden" id="id" name="id">
                     <div class="form-group mb-2">
                         <label for="nombre">Nombres</label>
                         <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Nombres">
@@ -48,7 +50,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Registrar</button>
+                    <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </form>

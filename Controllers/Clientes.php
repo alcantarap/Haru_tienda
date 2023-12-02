@@ -1,3 +1,4 @@
+-- Active: 1701484213106@@127.0.0.1@3305@haru_tienda
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
