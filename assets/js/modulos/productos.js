@@ -1,18 +1,17 @@
-const nuevo = document.querySelector('#nuevo_registro');
 const frm = document.querySelector('#frmRegistro');
-const titleModal = document.querySelector('#titleModal');
 const btnAccion = document.querySelector('#btnAccion');
-const myModal = new bootstrap.Modal(document.getElementById('nuevoModal'))
-let tblCategorias;
+let tblCattblProductosegorias;
 document.addEventListener('DOMContentLoaded', function() {
-    tblCategorias = $('#tblCategorias').DataTable( {
+    tblProductos = $('#tblProductos').DataTable( {
         ajax: {
-            url: base_url + 'categorias/listar',
+            url: base_url + 'productos/listar',
             dataSrc: ''
         },
         columns: [
             { data: 'id' },
-            { data: 'categoria' },
+            { data: 'nombre' },
+            { data: 'precio' },
+            { data: 'cantidad' },
             { data: 'imagen' },
             { data: 'accion' }
         ],
@@ -20,21 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         dom,
         buttons
     });
-    //levantar modal nuevo_registro
-    nuevo.addEventListener('click', function () {
-        document.querySelector('#id').value = '';
-        document.querySelector('#imagen_actual').value = '';
-        document.querySelector('#imagen').value = '';
-        titleModal.textContent = "Nueva categoria";
-        btnAccion.textContent = 'Registrar';
-        frm.reset();
-        myModal.show();
-    })
-    //submit categorias
+    //submit Productos
     frm.addEventListener('submit', function(e) {
         e.preventDefault();
         let data = new FormData(this);
-        const url = base_url + "categorias/registrar";
+        const url = base_url + "productos/registrar";
         const http = new XMLHttpRequest();
         http.open('POST', url, true);
         http.send(data);
@@ -43,17 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(this.responseText);
                 const res = JSON.parse(this.responseText);
                 if (res.icono == 'success') {
-                    myModal.hide();
-                    tblCategorias.ajax.reload();
+                    frm.reset();
+                    tblProductos.ajax.reload();
                     document.querySelector('#imagen').value = '';
                 }
                 Swal.fire(
                     'Aviso?',
                     res.msg.toUpperCase(),
                     res.icono
-                );
+                )
             }
-        };
+        }
     });
 });
 

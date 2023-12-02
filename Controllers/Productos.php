@@ -1,5 +1,5 @@
 <?php
-class Categorias extends Controller
+class Productos extends Controller
 {
     public function __construct()
     {
@@ -8,14 +8,15 @@ class Categorias extends Controller
     }
     public function index()
     {
-        $data['title'] = 'categorias';
-        $this->views->getView('admin/categorias', "index", $data);
+        $data['title'] = 'productos';
+        $data['categorias'] = $this->model->getCategorias();
+        $this->views->getView('admin/productos', "index", $data);
     }
     function listar()
     {
-        $data = $this->model->getCategorias(1);
+        $data = $this->model->getProductos(1);
         for ($i = 0; $i < count($data); $i++) {
-            $data[$i]['imagen'] = '<img class="img-thumbnail" src="' .$data[$i]['imagen'].'" alt="'.$data[$i]['categoria'].'" width="50">';
+            $data[$i]['imagen'] = '<img class="img-thumbnail" src="' .$data[$i]['imagen'].'" alt="'.$data[$i]['nombre'].'" width="50">';
             $data[$i]['accion'] = '<div class="d-flex">
             <button class="btn btn-primary" type="button" onclick="editCat(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button>
             <button class="btn btn-danger" type="button" onclick="eliminarCat(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></button>
@@ -26,14 +27,18 @@ class Categorias extends Controller
     }
     function registrar()
     {
-        if (isset($_POST['categoria'])) {
+        if (isset($_POST['nombre']) && isset($_POST['precio'])) {
+            $nombre = $_POST['nombre'];
+            $precio = $_POST['precio'];
+            $cantidad = $_POST['cantidad'];
+            $descripcion = $_POST['descripcion'];
             $categoria = $_POST['categoria'];
             $imagen = $_FILES['imagen'];
             $tmp_name = $imagen['tmp_name'];
             $id = $_POST['id'];
-            $ruta = 'assets/images/categorias/';
+            $ruta = 'assets/images/productos/';
             $nombreImg = date('YmdHis');
-            if (empty($_POST['categoria'])) {
+            if (empty($nombre) || empty($precio) || empty($cantidad)) {
                 $respuesta = array('msg' => 'todos los campos son requeridos', 'icono' => 'warning');
             } else {
                 if (!empty($imagen['name'])) {
@@ -45,9 +50,7 @@ class Categorias extends Controller
                 }
                 
                 if (empty($id)) {
-                    $result = $this->model->verificarCategoria($categoria);
-                    if (empty($result)) {
-                        $data = $this->model->registrar($categoria, $destino);
+                    $data = $this->model->registrar($nombre,$descripcion, $precio, $cantidad, $imagen, $categoria, $destino);
                         if ($data > 0) {
                             if (!empty($imagen['name'])) {
                                 move_uploaded_file($tmp_name, $destino);
@@ -56,9 +59,6 @@ class Categorias extends Controller
                         } else {
                             $respuesta = array('msg' => 'Error al registrar', 'icono' => 'error');
                         }
-                    } else {
-                        $respuesta = array('msg' => 'Correo existente', 'icono' => 'warning');
-                    }
                 } else {
                     $data = $this->model->modificar($categoria, $destino, $id);
                     if ($data == 1) {
