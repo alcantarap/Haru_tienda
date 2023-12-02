@@ -156,4 +156,18 @@ class Principal extends Controller
         $data['title'] = 'CHAT';
         $this->views->getView('principal', "db_chat", $data);
     }
+
+    //Vista CHAT
+    public function addMsg()
+    {
+        $data['title'] = 'CHAT';
+        $this->views->getView('principal', "addMsg", $data);
+    }
+
+    //Vista CHAT
+    public function readMsg()
+    {
+        $data['title'] = 'CHAT';
+        $this->views->getView('principal', "readMsg", $data);
+    }
 }

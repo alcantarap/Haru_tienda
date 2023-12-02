@@ -1,26 +1,13 @@
-// Read Messages from the DataBase 
+// ENVIO MENSAJE
 
-let msgdiv=document.querySelector(".msg");
-setInterval(() => {
-  fetch("readMsg.php").then(
-    r=>{
-     if(r.ok){
-      return r.text();
-     }
-    }
-  ).then(
-    d=>{
-      msgdiv.innerHTML=d;
-    }
-  )
-}, 500);
+let msgdiv = document.querySelector(".msg");
 
+//function update() {
+//let msg = document.getElementById('input_msg').value;
+//console.log('Message:', msg);
+//}
 
-
-
-
-
-// ADD Messages to the DataBase 
+// UPDATE --  Agregar mensaje a la BD
 window.onkeydown=(e)=>{
   if(e.key=="Enter"){
     update()
@@ -29,7 +16,7 @@ window.onkeydown=(e)=>{
 function update(){
   let msg=input_msg.value;
   input_msg.value="";
-  fetch(`addMsg.php?msg=${msg}`).then(
+  fetch(`addMsg?msg=${msg}`).then(
     r=>{
       if(r.ok){
         return r.text();
@@ -37,8 +24,24 @@ function update(){
     }
   ).then(
     d=>{
-      console.log("msg has been added")
+      console.log("msg enviado")
       msgdiv.scrollTop=(msgdiv.scrollHeight-msgdiv.clientHeight);
     }
   )
+
+//Escritura y lectura de mensajes
+  let msgdiv=document.querySelector(".msg");
+  setInterval(() => {
+    fetch("readMsg").then(
+      r=>{
+      if(r.ok){
+        return r.text();
+      }
+      }
+    ).then(
+      d=>{
+        msgdiv.innerHTML=d;
+      }
+    )
+  }, 500);
 }

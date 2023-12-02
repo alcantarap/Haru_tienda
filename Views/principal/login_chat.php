@@ -25,7 +25,7 @@ if(isset($_POST["nombre"]) && isset($_POST["celular"])){
             $q ="SELECT * FROM `users` WHERE celular='$celular'";
             if ($rq = mysqli_query($db, $q)){
                 if(mysqli_num_rows($rq)==1){
-                    echo "<script>alert($celular+' Este número ya esta ocupado por otra persona')</script>";
+                    echo "<script>alert($celular+' Este número ya esta ocupado')</script>";
                 }else{
                     $q="INSERT INTO `users`(`nombre`,`celular`) VALUES ('$nombre','$celular')";
                     if ($rq = mysqli_query($db, $q)){
