@@ -58,6 +58,11 @@
                         <div class="menu-title"><i class='fas fa-user'></i>Usuarios</div>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo BASE_URL . 'categorias';?>">
+                        <div class="menu-title"><i class='fas fa-tags'></i>Categorias</div>
+                    </a>
+                </li>
             </ul>
             <!--end navigation-->
         </div>
