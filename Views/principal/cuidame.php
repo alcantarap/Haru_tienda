@@ -112,4 +112,4 @@
   </ul>
 </nav>
 
-<?php include_once 'Views/templatel/footer-principal.php'; ?>
+<?php include_once 'Views/template/footer-principal.php'; ?>
